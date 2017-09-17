@@ -1,0 +1,344 @@
+{
+  "maxScore": 20,
+  "lives": 10,
+  "livesPictureURL": "/Javascript/anim_gif/personages/personage-1.gif",
+  "gameOverPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZVhfeXVPblhxNzA",
+  "successPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSd3U0S09YUkkwanc",
+  "failurePictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSMzNOUGc3QndEOGM",
+  "levels": [
+    {
+      "type": "choice",
+      "centralPicture": "/Javascript/anim_gif/personages/player.gif",
+      "question": "Что из перечисленного является логическим выражением",
+      "rightChoicesNums": [
+        1,
+        4,
+        5,
+        6
+      ],
+      "balls": 1,
+      "choiceVariants": [
+        "x = 0;",
+        "x || y",
+        "if (!x) return",
+        "var z = x ? 0 : 1",
+        "x == 1",
+        "Math.min (x, y)",
+        "z && t",
+        "x.length != 0"
+      ],
+      "choicePicture": {
+        "url": "images/goalkeeper.gif",
+        "width": "100px",
+        "height": "100px"
+      },
+      "rightChoicePicture": {
+        "url": "images/goalkeeper-3.gif",
+        "width": "100px"
+      },
+      "wrongChoicePicture": {
+        "url": "images/explosion.gif",
+        "width": "100px"
+      }
+    },
+    {
+      "type": "input",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Создать элемент div и связанную с ним переменную x в модели",
+      "inputLegend": {
+        "before": "var x = document.",
+        "after": "('div');"
+      },
+      "rightInput": "createElement",
+      "balls": 3,
+      "rightInputPicture": {
+        "url": "images/smile-01.gif",
+        "width": "100px"
+      },
+      "wrongInputPicture": {
+        "url": "images/explosion.gif",
+        "width": "80px"
+      }
+    },
+    {
+      "type": "findError",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Найти и исправить ошибки в коде",
+      "wrongContent": "var collection = document.getElementsByClassName('myClass'); \rfor (var j = 0; j < collection.width; j++) { \r\tcollection[j].color = 'red'; \r}",
+      "rightContent": "var collection = document.getElementsByClassName('myClass'); \rfor (var j = 0; j < collection.length; j++) { \r\tcollection[j].style.color = 'red'; \r}",
+      "contentCols": 100,
+      "contentRows": 5,
+      "balls": 10,
+      "rightInputPicture": {
+        "url": "images/victory-1.gif",
+        "width": "150px"
+      },
+      "wrongInputPicture": {
+        "url": "images/simpson-and-ball.gif",
+        "width": "150px"
+      }
+    },
+    {
+      "type": "choice",
+      "centralPicture": "images/player.gif",
+      "question": "Укажите встроенные свойства html элементов",
+      "rightChoicesNums": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "balls": 1,
+      "choiceVariants": [
+        "style",
+        "href",
+        "onclick",
+        "innerHTML",
+        "target",
+        "typeof",
+        "var",
+        "title"
+      ],
+      "choicePicture": {
+        "url": "images/goalkeeper-2.gif",
+        "width": "100px"
+      },
+      "rightChoicePicture": {
+        "url": "images/smile-01.gif",
+        "width": "80px"
+      },
+      "wrongChoicePicture": {
+        "url": "images/explosion.gif",
+        "width": "80px"
+      }
+    },
+    {
+      "type": "input",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Создайте пустой массив",
+      "inputLegend": {
+        "before": "var arr = ",
+        "after": ";"
+      },
+      "rightInput": "[]",
+      "balls": 1,
+      "rightInputPicture": {
+        "url": "images/victory_transparent.gif",
+        "width": "300px"
+      },
+      "wrongInputPicture": {
+        "url": "images/explosion.gif",
+        "width": "100px"
+      }
+    },
+    {
+      "type": "findError",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Найти и исправить ошибки в коде",
+      "wrongContent": "var x == 5;\rvar y != 7;\rvar document.z = {};",
+      "rightContent": "var x = 5;\rvar y = 7;\rvar z = {};",
+      "contentCols": 50,
+      "contentRows": 4,
+      "balls": 3,
+      "rightInputPicture": {
+        "url": "images/victory_transparent.gif",
+        "width": "300px"
+      },
+      "wrongInputPicture": {
+        "url": "images/simpson-and-ball.gif",
+        "width": "150px"
+      }
+    },
+    {
+      "type": "choice",
+      "centralPicture": "images/player.gif",
+      "question": "С помощью какого метода можно<br/>создать новый элемент DOM",
+      "rightChoicesNums": [
+        2
+      ],
+      "balls": 1,
+      "choiceVariants": [
+        "getElementById",
+        "appendChild",
+        "createElement",
+        "removeChild",
+        "addEventListener",
+        "open",
+        "focus",
+        "blur"
+      ],
+      "choicePicture": {
+        "url": "images/goalkeeper-2.gif",
+        "width": "100px"
+      },
+      "rightChoicePicture": {
+        "url": "images/smile-01.gif",
+        "width": "80px"
+      },
+      "wrongChoicePicture": {
+        "url": "images/explosion.gif",
+        "width": "80px"
+      }
+    },
+    {
+      "type": "input",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Назначить обработчика события click для кнопки btn",
+      "inputLegend": {
+        "before": "btn.",
+        "after": "= 'clickHandler ( event )';"
+      },
+      "rightInput": "onclick",
+      "balls": 3,
+      "rightInputPicture": {
+        "url": "images/victory_transparent.gif",
+        "width": "300px"
+      },
+      "wrongInputPicture": {
+        "url": "images/explosion.gif",
+        "width": "100px"
+      }
+    },
+    {
+      "type": "input",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Дополнить контент html-элемента main тегом &lt;p>Это я добавил&lt;/p>",
+      "inputLegend": {
+        "before": "document.getElementsByTagName('main')[0].",
+        "after": " += '&lt;p>Это я добавил&lt;/p>';"
+      },
+      "rightInput": "innerHTML",
+      "balls": 3,
+      "rightInputPicture": {
+        "url": "images/victory_transparent.gif",
+        "width": "300px"
+      },
+      "wrongInputPicture": {
+        "url": "images/explosion.gif",
+        "width": "100px"
+      }
+    },
+    {
+      "type": "choice",
+      "centralPicture": "images/player.gif",
+      "question": "Укажите свойства объекта<br/>Event",
+      "rightChoicesNums": [
+        5,
+        7,
+        "",
+        ""
+      ],
+      "balls": 1,
+      "choiceVariants": [
+        "innerHTML",
+        "width",
+        "style",
+        "color",
+        "parentNode",
+        "target",
+        "title",
+        "type"
+      ],
+      "choicePicture": {
+        "url": "images/goalkeeper-2.gif",
+        "width": "100px"
+      },
+      "rightChoicePicture": {
+        "url": "images/smile-01.gif",
+        "width": "80px"
+      },
+      "wrongChoicePicture": {
+        "url": "images/explosion.gif",
+        "width": "80px"
+      }
+    },
+    {
+      "type": "choice",
+      "centralPicture": "images/player.gif",
+      "question": "Какое выражение вернет NaN",
+      "rightChoicesNums": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7
+      ],
+      "balls": 1,
+      "choiceVariants": [
+        "0/0",
+        "Number.NaN",
+        "parseInt('10px')",
+        "Number.isNaN('x10')",
+        "parseFloat('x10')",
+        "Math.exp('*')",
+        "Math.min(10,'***')",
+        "Math.round(a/b)"
+      ],
+      "choicePicture": {
+        "url": "images/goalkeeper-2.gif",
+        "width": "100px"
+      },
+      "rightChoicePicture": {
+        "url": "images/smile-01.gif",
+        "width": "80px"
+      },
+      "wrongChoicePicture": {
+        "url": "images/explosion.gif",
+        "width": "80px"
+      }
+    },
+    {
+      "type": "choice",
+      "centralPicture": "images/player.gif",
+      "question": "Укажите условные операторы",
+      "rightChoicesNums": [
+        0,
+        3,
+        5
+      ],
+      "balls": 1,
+      "choiceVariants": [
+        "switch",
+        "for",
+        "while",
+        "if",
+        "typeof",
+        "x?y:z",
+        "+=",
+        "%"
+      ],
+      "choicePicture": {
+        "url": "images/goalkeeper.gif",
+        "width": "100px"
+      },
+      "rightChoicePicture": {
+        "url": "images/victory-1.gif",
+        "width": "80px"
+      },
+      "wrongChoicePicture": {
+        "url": "images/explosion.gif",
+        "width": "80px"
+      }
+    },
+    {
+      "type": "findError",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Дополнить код, подставив вместо ??? правильные выражения. Код должен добавить на страницу новый элемент с заданным текстом",
+      "wrongContent": "var div = ???('div'); \rdiv.??? = 'Это новый элемент';\r\tdocument.???(div);\r",
+      "rightContent": "var div = document.createElement('div'); \rdiv.innerHTML = 'Это новый элемент';\r\tdocument.body.appendChild(div);\r",
+      "contentCols": 100,
+      "contentRows": 7,
+      "balls": 8,
+      "rightInputPicture": {
+        "url": "images/victory_transparent.gif",
+        "width": "300px"
+      },
+      "wrongInputPicture": {
+        "url": "images/simpson-and-ball.gif",
+        "width": "150px"
+      }
+    }
+  ]
+}

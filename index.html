@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="images/js_cup.png" type="image/x-icon">
+<title>JS courseware</title>
+<meta charset="utf-8">
+<meta name="description" content="Javascript: courseware | Обучающие тренажеры | &copy; Irina H. Fylyppova 2017 | &copy; Филиппова Ірина 2017">
+<meta name="keywords" content="javascript, js, courseware, обучалки"
+
+<!-- my stylesheet -->
+<link rel="stylesheet" href="css/perspective.css">
+<link rel="stylesheet" href="css/courseware.css">
+<!-- my scripts -->
+<script src="js/perspectiveConstructor.js"></script>
+<script src="js/CoursewareConstructor.js"></script>
+<!-- TweenMax-->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/plugins/CSSPlugin.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/easing/EasePack.min.js"></script>
+
+<script>
+    var garevnaCourseware = {
+		defaultCentralImage: undefined,
+		defaultSideImage: undefined,
+		mainContainer: null,
+		images: [],
+		ready: false,
+		persp: [],
+		loadData: function ( sourceDataURL, callback ) {
+			try {
+				var worker = new Worker( 'js/json_loader.js' );
+				worker.postMessage ( sourceDataURL );
+				worker.addEventListener('message', function( event ) {
+					if (event.data) { callback ( event.data ); }
+					worker.terminate();
+					worker = undefined;
+				});
+			}
+			catch (err) { console.log (err.message); }
+		}
+	};
+</script>
+
+</head>
+<body>
+<section id="main_perspective"><div class="loadinProcess"></div></section>
+<script>
+	var courseware = new CoursewareConstructor ();
+	var sourceNum = location.hash.substr(1,location.hash.length);
+	courseware.init('json/courseware_' + sourceNum + '.json');
+	
+	garevnaCourseware.loadData ( 'json/perspective_' + sourceNum + '.json', perspectiveCallback );
+	
+	function perspectiveCallback ($data) {
+		garevnaCourseware.defaultCentralImage = $data.defaultCentralImage;
+		garevnaCourseware.defaultSideImage = $data.defaultSideImage;
+		garevnaCourseware.personage = $data.personage;
+		garevnaCourseware.images = $data.levels;
+		garevnaCourseware.ready = true;
+		garevnaCourseware.mainContainer =  document.getElementById("main_perspective");
+		garevnaCourseware.mainContainer.removeChild(garevnaCourseware.mainContainer.children[0]);
+		
+		for ( var j = 0; j < garevnaCourseware.images.length; j++) {
+			garevnaCourseware.persp[j] = new CoursewarePerspectiveConstructor ( {
+				id: j,
+				parentObject: garevnaCourseware.mainContainer
+			});
+			var imgs = {
+				left:   garevnaCourseware.images[j].leftBackground || garevnaCourseware.images[j].xBackground,
+				right:  garevnaCourseware.images[j].rightBackground || garevnaCourseware.images[j].xBackground,
+				top:    garevnaCourseware.images[j].topBackground || garevnaCourseware.images[j].yBackground,
+				bottom: garevnaCourseware.images[j].bottomBackground || garevnaCourseware.images[j].yBackground,
+				center: garevnaCourseware.images[j].centralBackground
+			};
+			garevnaCourseware.persp[j].setImages ( imgs );
+			garevnaCourseware.persp[j].setNestedFunction ( courseware.nextLevel );
+			
+			if ( j > 0 ) {
+				var _container = garevnaCourseware.persp[j-1].container;
+				var nested = _container.parentNode.removeChild ( _container );
+				garevnaCourseware.persp[j].setNestedObject ( nested );
+			}
+			else { garevnaCourseware.persp[j].setParentNode ( garevnaCourseware.mainContainer ); }
+		}
+		garevnaCourseware.mainContainer.personage = document.createElement('img');
+		garevnaCourseware.mainContainer.personage.src = $data.personage;
+		garevnaCourseware.mainContainer.personage.style.position = 'absolute';
+		garevnaCourseware.mainContainer.personage.style.zIndex = '1200';
+		garevnaCourseware.mainContainer.personage.style.width = '120px';
+		garevnaCourseware.mainContainer.personage.style.borderRadius = "100%";
+		garevnaCourseware.mainContainer.appendChild(garevnaCourseware.mainContainer.personage);
+		garevnaCourseware.mainContainer.addEventListener("mousemove", function (event) {
+			TweenLite.to( garevnaCourseware.mainContainer.personage, 0.5, { left: event.clientX, top: event.clientY });
+		});
+		garevnaCourseware.mainContainer.personage.addEventListener("mouseover", function() { this.style.cursor = 'none'; });
+	}
+    
+	window.addEventListener ('resize', function ( event ) {
+		for (var j=0; j < garevnaCourseware.persp.length; j++) {  garevnaCourseware.persp[j].perspectiveObjectSize ();  }
+		courseware.resizeMainScene();
+		if (courseware && (courseware.getLevelType() == 'choice')) { courseware.resizeChoiceLevel (); }
+		// if (courseware.getLevelType() == 'input') { courseware.resizeInputLevel (); } 
+	});
+</script>
+
+</body>
+</html>
