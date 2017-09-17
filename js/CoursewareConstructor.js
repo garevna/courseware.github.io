@@ -60,10 +60,10 @@ function CoursewareConstructor () {
 			coursewareWorker.postMessage ( sourceURL );
 			coursewareWorker.addEventListener('message', function(e) {
 				var $data = e.data;
-				coursewareWorker.terminate();
-				coursewareWorker = undefined;
-				if (e.data) { callback ( $data ); }
-				else { alert("Ограниченная функциональность. Отсутствуют библиотеки: " + sourceURL); }
+				//coursewareWorker.terminate();
+				//coursewareWorker = undefined;
+				if (e.data) callback ( $data );
+				else alert ("Ограниченная функциональность. Отсутствуют библиотеки: " + sourceURL);
 			}, false);
 		}
 		catch (err) { alert("К сожалению, в Вашем браузере полная функциональность невозможна"); }
