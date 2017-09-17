@@ -36,8 +36,7 @@
 					worker.terminate();
 					worker = undefined;
 				});
-			}
-			catch (err) { console.log (err.message); }
+			} catch (err) { console.log (err.message); }
 		}
 	};
 </script>
@@ -47,7 +46,7 @@
 <section id="main_perspective"><div class="loadinProcess"></div></section>
 <script>
 	var courseware = new CoursewareConstructor ();
-	var sourceNum = location.hash.substr(1,location.hash.length);
+	var sourceNum = location.hash.substr(1, location.hash.length);
 	courseware.init('/js_courseware.github.io/json/courseware_' + sourceNum + '.json');
 	
 	garevnaCourseware.loadData ( '/js_courseware.github.io/json/perspective_' + sourceNum + '.json', perspectiveCallback );
