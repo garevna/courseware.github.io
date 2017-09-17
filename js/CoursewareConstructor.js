@@ -56,7 +56,7 @@ function CoursewareConstructor () {
 	// ======================================================================================== loadData
     function loadData ( sourceURL, callback ) {
 		try {
-			var coursewareWorker = new Worker( '/js/json_loader.js' );
+			var coursewareWorker = new Worker( 'js/json_loader.js' );
 			coursewareWorker.postMessage ( sourceURL );
 			coursewareWorker.addEventListener('message', function(e) {
 				var $data = e.data;
@@ -101,7 +101,7 @@ function CoursewareConstructor () {
 		this.maxLives = $data.lives;
 		//this.livesPictureURL = $data.livesPictureURL;
 		var sheet = document.createElement('style');
-		sheet.innerHTML = '.livesPanel > div { background-image: url(' +$data.livesPictureURL  + '); }';
+		sheet.innerHTML = '.livesPanel > div { background-image: url(' + $data.livesPictureURL  + '); }';
 		document.head.appendChild(sheet);
 		this.gameOverPictureURL = $data.gameOverPictureURL;
 		this.successPictureURL = $data.successPictureURL;
