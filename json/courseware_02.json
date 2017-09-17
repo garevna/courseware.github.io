@@ -1,14 +1,14 @@
 {
   "maxScore": 20,
   "lives": 10,
-  "livesPictureURL": "/Javascript/anim_gif/personages/personage-1.gif",
+  "livesPictureURL": "images/personage-1.gif",
   "gameOverPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZVhfeXVPblhxNzA",
   "successPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSd3U0S09YUkkwanc",
   "failurePictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSMzNOUGc3QndEOGM",
   "levels": [
     {
       "type": "choice",
-      "centralPicture": "/Javascript/anim_gif/personages/player.gif",
+      "centralPicture": "images/player.gif",
       "question": "Что из перечисленного является логическим выражением",
       "rightChoicesNums": [
         1,
