@@ -1,14 +1,14 @@
 {
   "maxScore": 20,
   "lives": 10,
-  "livesPictureURL": "images/personage-1.gif",
+  "livesPictureURL": "/js_courseware.github.io/images/personage-1.gif",
   "gameOverPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZVhfeXVPblhxNzA",
   "successPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSd3U0S09YUkkwanc",
   "failurePictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSMzNOUGc3QndEOGM",
   "levels": [
     {
       "type": "choice",
-      "centralPicture": "images/player.gif",
+      "centralPicture": "/js_courseware.github.io/images/player.gif",
       "question": "Что из перечисленного является логическим выражением",
       "rightChoicesNums": [
         1,
@@ -28,16 +28,16 @@
         "x.length != 0"
       ],
       "choicePicture": {
-        "url": "images/goalkeeper.gif",
+        "url": "/js_courseware.github.io/images/goalkeeper.gif",
         "width": "100px",
         "height": "100px"
       },
       "rightChoicePicture": {
-        "url": "images/goalkeeper-3.gif",
+        "url": "/js_courseware.github.io/images/goalkeeper-3.gif",
         "width": "100px"
       },
       "wrongChoicePicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "100px"
       }
     },
@@ -52,11 +52,11 @@
       "rightInput": "createElement",
       "balls": 3,
       "rightInputPicture": {
-        "url": "images/smile-01.gif",
+        "url": "/js_courseware.github.io/images/smile-01.gif",
         "width": "100px"
       },
       "wrongInputPicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "80px"
       }
     },
@@ -70,17 +70,17 @@
       "contentRows": 5,
       "balls": 10,
       "rightInputPicture": {
-        "url": "images/victory-1.gif",
+        "url": "/js_courseware.github.io/images/victory-1.gif",
         "width": "150px"
       },
       "wrongInputPicture": {
-        "url": "images/simpson-and-ball.gif",
+        "url": "/js_courseware.github.io/images/simpson-and-ball.gif",
         "width": "150px"
       }
     },
     {
       "type": "choice",
-      "centralPicture": "images/player.gif",
+      "centralPicture": "/js_courseware.github.io/images/player.gif",
       "question": "Укажите встроенные свойства html элементов",
       "rightChoicesNums": [
         0,
@@ -101,15 +101,15 @@
         "title"
       ],
       "choicePicture": {
-        "url": "images/goalkeeper-2.gif",
+        "url": "/js_courseware.github.io/images/goalkeeper-2.gif",
         "width": "100px"
       },
       "rightChoicePicture": {
-        "url": "images/smile-01.gif",
+        "url": "/js_courseware.github.io/images/smile-01.gif",
         "width": "80px"
       },
       "wrongChoicePicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "80px"
       }
     },
@@ -124,11 +124,11 @@
       "rightInput": "[]",
       "balls": 1,
       "rightInputPicture": {
-        "url": "images/victory_transparent.gif",
+        "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "300px"
       },
       "wrongInputPicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "100px"
       }
     },
@@ -142,17 +142,17 @@
       "contentRows": 4,
       "balls": 3,
       "rightInputPicture": {
-        "url": "images/victory_transparent.gif",
+        "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "300px"
       },
       "wrongInputPicture": {
-        "url": "images/simpson-and-ball.gif",
+        "url": "/js_courseware.github.io/images/simpson-and-ball.gif",
         "width": "150px"
       }
     },
     {
       "type": "choice",
-      "centralPicture": "images/player.gif",
+      "centralPicture": "/js_courseware.github.io/images/player.gif",
       "question": "С помощью какого метода можно<br/>создать новый элемент DOM",
       "rightChoicesNums": [
         2
@@ -169,15 +169,15 @@
         "blur"
       ],
       "choicePicture": {
-        "url": "images/goalkeeper-2.gif",
+        "url": "/js_courseware.github.io/images/goalkeeper-2.gif",
         "width": "100px"
       },
       "rightChoicePicture": {
-        "url": "images/smile-01.gif",
+        "url": "/js_courseware.github.io/images/smile-01.gif",
         "width": "80px"
       },
       "wrongChoicePicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "80px"
       }
     },
@@ -192,11 +192,11 @@
       "rightInput": "onclick",
       "balls": 3,
       "rightInputPicture": {
-        "url": "images/victory_transparent.gif",
+        "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "300px"
       },
       "wrongInputPicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "100px"
       }
     },
@@ -211,17 +211,17 @@
       "rightInput": "innerHTML",
       "balls": 3,
       "rightInputPicture": {
-        "url": "images/victory_transparent.gif",
+        "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "300px"
       },
       "wrongInputPicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "100px"
       }
     },
     {
       "type": "choice",
-      "centralPicture": "images/player.gif",
+      "centralPicture": "/js_courseware.github.io/images/player.gif",
       "question": "Укажите свойства объекта<br/>Event",
       "rightChoicesNums": [
         5,
@@ -241,21 +241,21 @@
         "type"
       ],
       "choicePicture": {
-        "url": "images/goalkeeper-2.gif",
+        "url": "/js_courseware.github.io/images/goalkeeper-2.gif",
         "width": "100px"
       },
       "rightChoicePicture": {
-        "url": "images/smile-01.gif",
+        "url": "/js_courseware.github.io/images/smile-01.gif",
         "width": "80px"
       },
       "wrongChoicePicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "80px"
       }
     },
     {
       "type": "choice",
-      "centralPicture": "images/player.gif",
+      "centralPicture": "/js_courseware.github.io/images/player.gif",
       "question": "Какое выражение вернет NaN",
       "rightChoicesNums": [
         0,
@@ -277,21 +277,21 @@
         "Math.round(a/b)"
       ],
       "choicePicture": {
-        "url": "images/goalkeeper-2.gif",
+        "url": "/js_courseware.github.io/images/goalkeeper-2.gif",
         "width": "100px"
       },
       "rightChoicePicture": {
-        "url": "images/smile-01.gif",
+        "url": "/js_courseware.github.io/images/smile-01.gif",
         "width": "80px"
       },
       "wrongChoicePicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "80px"
       }
     },
     {
       "type": "choice",
-      "centralPicture": "images/player.gif",
+      "centralPicture": "/js_courseware.github.io/images/player.gif",
       "question": "Укажите условные операторы",
       "rightChoicesNums": [
         0,
@@ -310,15 +310,15 @@
         "%"
       ],
       "choicePicture": {
-        "url": "images/goalkeeper.gif",
+        "url": "/js_courseware.github.io/images/goalkeeper.gif",
         "width": "100px"
       },
       "rightChoicePicture": {
-        "url": "images/victory-1.gif",
+        "url": "/js_courseware.github.io/images/victory-1.gif",
         "width": "80px"
       },
       "wrongChoicePicture": {
-        "url": "images/explosion.gif",
+        "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "80px"
       }
     },
@@ -332,11 +332,11 @@
       "contentRows": 7,
       "balls": 8,
       "rightInputPicture": {
-        "url": "images/victory_transparent.gif",
+        "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "300px"
       },
       "wrongInputPicture": {
-        "url": "images/simpson-and-ball.gif",
+        "url": "/js_courseware.github.io/images/simpson-and-ball.gif",
         "width": "150px"
       }
     }
