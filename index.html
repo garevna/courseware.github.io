@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" href="images/js_cup.png" type="image/x-icon">
+<link rel="shortcut icon" href="/images/js_cup.png" type="image/x-icon">
 <title>JS courseware</title>
 <meta charset="utf-8">
 <meta name="description" content="Javascript: courseware | Обучающие тренажеры | &copy; Irina H. Fylyppova 2017 | &copy; Филиппова Ірина 2017">
 <meta name="keywords" content="javascript, js, courseware, обучалки"
 
 <!-- my stylesheet -->
-<link rel="stylesheet" href="css/perspective.css">
-<link rel="stylesheet" href="css/courseware.css">
+<link rel="stylesheet" href="/css/perspective.css">
+<link rel="stylesheet" href="/css/courseware.css">
 <!-- my scripts -->
-<script src="js/perspectiveConstructor.js"></script>
-<script src="js/CoursewareConstructor.js"></script>
+<script src="/js/perspectiveConstructor.js"></script>
+<script src="/js/CoursewareConstructor.js"></script>
 <!-- TweenMax-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/plugins/CSSPlugin.min.js"></script>
@@ -28,7 +28,7 @@
 		persp: [],
 		loadData: function ( sourceDataURL, callback ) {
 			try {
-				var worker = new Worker( 'js/json_loader.js' );
+				var worker = new Worker( '/js/json_loader.js' );
 				worker.postMessage ( sourceDataURL );
 				worker.addEventListener('message', function( event ) {
 					if (event.data) { callback ( event.data ); }
@@ -47,9 +47,9 @@
 <script>
 	var courseware = new CoursewareConstructor ();
 	var sourceNum = location.hash.substr(1,location.hash.length);
-	courseware.init('json/courseware_' + sourceNum + '.json');
+	courseware.init('/json/courseware_' + sourceNum + '.json');
 	
-	garevnaCourseware.loadData ( 'json/perspective_' + sourceNum + '.json', perspectiveCallback );
+	garevnaCourseware.loadData ( '/json/perspective_' + sourceNum + '.json', perspectiveCallback );
 	
 	function perspectiveCallback ($data) {
 		garevnaCourseware.defaultCentralImage = $data.defaultCentralImage;
