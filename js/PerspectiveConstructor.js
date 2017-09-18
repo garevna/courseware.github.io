@@ -1,6 +1,6 @@
 //                                 C O N S T R U C T O R
 // -----------------------------------------------------------------------------------------------------
-function CoursewarePerspectiveConstructor ( params ) {
+function CoursewareConstructor ( params ) {
 	
 	this.parentNode = params.parentObject || document.body[0];
 	
