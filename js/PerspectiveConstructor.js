@@ -1,22 +1,37 @@
 //                                 C O N S T R U C T O R
 // -----------------------------------------------------------------------------------------------------
-function CoursewarePerspectiveConstructor ( params ) {
+function garevna_Perspective ( params ) {
 	
+	this.defaultCentralImage = '/Javascript/anim_gif/object-02.gif';
+	this.defaultSideImage = '/Javascript/anim_gif/stars-1.gif';
 	this.parentNode = params.parentObject || document.body[0];
 	
 	this.nestedObject = params.nestedObject || null;
 	this.nestedFunction = params.nestedFunction || null;
 	
-	this.parentNode.appendChild ( this.container );
-	
+	this.container = document.createElement('div');
+	this.parentNode.appendChild(this.container);
+	this.container.className = 'garevna_perspectiveContainer';
 	// this.container.onmouseover = function ( event ) { this.parentObject.mc_perspective ( event ); }
 	this.container.parentObject = this;
 	
-	this.container.appendChild ( this.leftSide );
-	this.container.appendChild ( this.rightSide );
-	this.container.appendChild ( this.topSide );
-	this.container.appendChild ( this.bottomSide );
-	this.container.appendChild ( this.centralSide );
+	this.leftSide = document.createElement('div');
+	this.rightSide = document.createElement('div');
+	this.topSide = document.createElement('div');
+	this.bottomSide = document.createElement('div');
+	this.centralSide = document.createElement('div');
+	
+	this.leftSide.className = 'garevna_perspectiveLeftSide';
+	this.rightSide.className = 'garevna_perspectiveRightSide';
+	this.topSide.className = 'garevna_perspectiveTopSide';
+	this.bottomSide.className = 'garevna_perspectiveBottomSide';
+	this.centralSide.className = 'garevna_perspectiveCenterSide';
+	
+	this.container.appendChild( this.leftSide );
+	this.container.appendChild( this.rightSide );
+	this.container.appendChild( this.topSide );
+	this.container.appendChild( this.bottomSide );
+	this.container.appendChild( this.centralSide );
 	this.container.style.cursor = 'not-allowed';
 	
 	// ================================================================================== setImages
@@ -33,7 +48,6 @@ function CoursewarePerspectiveConstructor ( params ) {
 		this.bottomSide.style.backgroundImage = 'url(' + b + ')';
 		this.centralSide.style.backgroundImage = 'url(' + c + ')';
 	}
-	// ---------------------------------------------------------------------------------------
 	this.parentNode.style.cursor = 'none';
 	this.setParentNode = function ( parent ) { this.parentNode = parent; }
 	this.setNestedObject = function ( nestedObj ) { this.nestedObject = nestedObj; }
@@ -141,19 +155,3 @@ function CoursewarePerspectiveConstructor ( params ) {
 	this.perspectiveObjectSize ();
 	this.setMouseOverCallback ();
 }
-CoursewarePerspectiveConstructor.prototype.defaultCentralImage = 'images/object-02.gif';
-CoursewarePerspectiveConstructor.prototype.defaultSideImage = 'images/stars-1.gif';
-
-CoursewarePerspectiveConstructor.prototype.container = document.createElement('div');
-CoursewarePerspectiveConstructor.prototype.leftSide = document.createElement('div');
-CoursewarePerspectiveConstructor.prototype.rightSide = document.createElement('div');
-CoursewarePerspectiveConstructor.prototype.topSide = document.createElement('div');
-CoursewarePerspectiveConstructor.prototype.bottomSide = document.createElement('div');
-CoursewarePerspectiveConstructor.prototype.centralSide = document.createElement('div');
-
-CoursewarePerspectiveConstructor.prototype.container.className = 'garevna_perspectiveContainer';
-CoursewarePerspectiveConstructor.prototype.leftSide.className = 'garevna_perspectiveLeftSide';
-CoursewarePerspectiveConstructor.prototype.rightSide.className = 'garevna_perspectiveRightSide';
-CoursewarePerspectiveConstructor.prototype.topSide.className = 'garevna_perspectiveTopSide';
-CoursewarePerspectiveConstructor.prototype.bottomSide.className = 'garevna_perspectiveBottomSide';
-CoursewarePerspectiveConstructor.prototype.centralSide.className = 'garevna_perspectiveCenterSide';
