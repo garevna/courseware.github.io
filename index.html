@@ -32,7 +32,7 @@
 				var worker = new Worker( '/js_courseware.github.io/js/json_loader.js' );
 				worker.postMessage ( sourceDataURL );
 				worker.addEventListener('message', function( event ) {
-					if (event.data) { callback ( event.data ); }
+					if (event.data) { console.log (event.data); callback ( event.data ); }
 					worker.terminate();
 					worker = undefined;
 				});
@@ -46,6 +46,7 @@
 <section id="main_perspective"><div class="loadinProcess"></div></section>
 <script>
 	var courseware = new CoursewareConstructor ();
+	console.log ('courseware: ', courseware);
 	var sourceNum = location.hash.substr(1, location.hash.length);
 	courseware.init('/js_courseware.github.io/json/courseware_' + sourceNum + '.json');
 	
@@ -98,9 +99,10 @@
 	window.addEventListener ('resize', function ( event ) {
 		for (var j=0; j < garevnaCourseware.persp.length; j++) {  garevnaCourseware.persp[j].perspectiveObjectSize ();  }
 		courseware.resizeMainScene();
-		if (courseware && (courseware.getLevelType() == 'choice')) { courseware.resizeChoiceLevel (); }
+		if (courseware && courseware.getLevelType() == 'choice') { courseware.resizeChoiceLevel (); }
 		// if (courseware.getLevelType() == 'input') { courseware.resizeInputLevel (); } 
 	});
+	console.log ('garevnaCourseware: ', garevnaCourseware)
 </script>
 
 </body>
