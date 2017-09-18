@@ -56,7 +56,7 @@ function CoursewareConstructor () {
 	// ======================================================================================== loadData
     function loadData ( sourceURL, callback ) {
 		try {
-			var coursewareWorker = new Worker( 'json_loader.js' );
+			var coursewareWorker = new Worker( 'js/json_loader.js' );
 			coursewareWorker.postMessage ( sourceURL );
 			coursewareWorker.addEventListener('message', function(e) {
 				var $data = e.data;
