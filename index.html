@@ -9,11 +9,11 @@
 <meta name="keywords" content="javascript, js, courseware, обучалки"
 
 <!-- my stylesheet -->
-<link rel="stylesheet" href="/css/perspective.css">
-<link rel="stylesheet" href="/css/courseware.css">
+<link rel="stylesheet" href="css/perspective.css">
+<link rel="stylesheet" href="css/courseware.css">
 <!-- my scripts -->
-<script src="/js/perspective.js"></script>
-<script src="/js/CoursewareConstructor.js"></script>
+<script src="js/perspective.js"></script>
+<script src="js/CoursewareConstructor.js"></script>
 <!-- TweenMax-->
 <script src="TweenMax.min[1].js"></script>
 <script src="CSSPlugin.min[1].js"></script>
@@ -29,7 +29,7 @@
 		persp: [],
 		loadData: function ( sourceDataURL, callback ) {
 			try {
-				var worker = new Worker( '/js/json_loader.js' );
+				var worker = new Worker( 'js/json_loader.js' );
 				worker.postMessage ( sourceDataURL );
 				worker.addEventListener('message', function( event ) {
 					if (event.data) { callback ( event.data ); }
@@ -49,9 +49,9 @@
 <script>
 	var courseware = new CoursewareConstructor ();
 	var sourceNum = location.hash.substr(1,location.hash.length);
-	courseware.init('/data_files/js/courseware_' + sourceNum + '.json');
+	courseware.init('json/courseware_' + sourceNum + '.json');
 	
-	garevnaCourseware.loadData ( '/data_files/js/perspective_' + sourceNum + '.json', perspectiveCallback );
+	garevnaCourseware.loadData ( 'json/perspective_' + sourceNum + '.json', perspectiveCallback );
 	
 	function perspectiveCallback ($data) {
 		garevnaCourseware.defaultCentralImage = $data.defaultCentralImage;
