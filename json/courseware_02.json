@@ -1,7 +1,7 @@
 {
   "maxScore": 20,
   "lives": 10,
-  "livesPictureURL": "/js_courseware.github.io/images/personage-1.gif",
+  "livesPictureURL": "/js_courseware.github.io/images/personage-01.gif",
   "gameOverPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZVhfeXVPblhxNzA",
   "successPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSd3U0S09YUkkwanc",
   "failurePictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSMzNOUGc3QndEOGM",
