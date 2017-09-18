@@ -2,12 +2,12 @@
     
 	@font-face {
         font-family: 'Comic Sans MS';
-        src: url("/css/fonts/Comic Sans MS.ttf");
+        src: url("../fonts/Comic Sans MS.ttf");
         src: local('Comic Sans MS'), local('Comic Sans MS'),
-        url("/fonts/Comic Sans MS.eot") format("embedded-opentype"),
-        url("/fonts/Comic Sans MS.otf") format("opentype"),
-        url("/fonts/Comic Sans MS.woff") format("woff"),
-        url("/fonts/Comic Sans MS.svg");
+        url("../fonts/Comic Sans MS.eot") format("embedded-opentype"),
+        url("../fonts/Comic Sans MS.otf") format("opentype"),
+        url("../fonts/Comic Sans MS.woff") format("woff"),
+        url("../fonts/Comic Sans MS.svg");
 	}
 	body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 	.mainScene {
@@ -32,7 +32,7 @@
 		top:48%;
 		right:48%;
 		bottom:48%;
-		background-image: url(/js_courseware.github.io/images/cycle.gif);
+		background-image: url(../images/cycle.gif);
 		background-repeat:no-repeat;
 		background-size:contain;
 		background-position:center center;
@@ -158,7 +158,14 @@
    }
    .scorePanel > progress { width:200px; height:10px; }
    .scorePanel:before { content: 'Score: '; }
-   .livesPanel > div { width:40px; height:40px; background-size:contain; background-repeat:no-repeat; background-position:center center; display:inline-block; }
+   .livesPanel > div { 
+	   width:40px; 
+	   height:40px; 
+	   background-size:contain; 
+	   background-repeat:no-repeat; 
+	   background-position:center center; 
+	   display:inline-block; 
+   }
    @keyframes button_mc {
 	   0% { right: 0; }
 	   50% { right:20px; }
@@ -170,7 +177,7 @@
 	   100% { border: none; }
    }
    @keyframes life_mc {
-	   0% { background-image: 'url(/Javascript/anim_gif/astronaut-1.gif)'; margin-left:auto; margin-top:auto; }
+	   0% { background-image: 'url(../images/astronaut-1.gif)'; margin-left:auto; margin-top:auto; }
 	   50% { margin-left:-10px; margin-top:-10px; }
 	   100% { margin-left:-20px; margin-top:-20px; }
    }
