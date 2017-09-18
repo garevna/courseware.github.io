@@ -4,7 +4,6 @@ function transport () {
 	return requestVar;
 };
 
-console.log ( 'worker' );
 this.addEventListener( 'message', function ( e ) {
 	var sourceURL = e.data;
 	var $request = transport ();
