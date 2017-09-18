@@ -1,5 +1,5 @@
 {
-  "maxScore": 20,
+  "maxScore": 37,
   "lives": 10,
   "livesPictureURL": "/js_courseware.github.io/images/cosmonaft.gif",
   "gameOverPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZVhfeXVPblhxNzA",
@@ -13,8 +13,8 @@
       "rightChoicesNums": [
         1,
         4,
-        5,
-        6
+        6,
+        7
       ],
       "balls": 1,
       "choiceVariants": [
