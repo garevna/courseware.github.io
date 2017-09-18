@@ -117,6 +117,12 @@
 	   background-image:url(https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSMzNOUGc3QndEOGM);
 	   background-position:top center;
    }
+   .garevna_gameFinishText {
+	   font-size:100px;
+	   width:100%;
+	   text-shadow:5px 5px 5px rgba(0,0,0,0.7);
+	   border:none;
+   }
    .targetElement {
 	   position:fixed;
 	   background-size:contain;
