@@ -56,7 +56,7 @@ function CoursewareConstructor () {
 	// ======================================================================================== loadData
     function loadData ( sourceURL, callback ) {
 		try {
-			var coursewareWorker = new Worker( '/js/json_loader.js' );
+			var coursewareWorker = new Worker( 'json_loader.js' );
 			coursewareWorker.postMessage ( sourceURL );
 			coursewareWorker.addEventListener('message', function(e) {
 				var $data = e.data;
@@ -308,14 +308,15 @@ function CoursewareConstructor () {
 		if (this.lives == 0) {
 			this.mainScene.innerHTML = '';
 			this.mainScene.style.backgroundImage = 'url(' + this.failurePictureURL + ')';
-			this.mainScene.style.backgroundSize = 'cover';
-			this.mainScene.style.backgroundPosition = 'top center';
+			// this.mainScene.style.backgroundSize = 'cover';
+			// this.mainScene.style.backgroundPosition = 'top center';
 			this.buttonToNextLevel.innerHTML = "FAILURE";
-			this.buttonToNextLevel.style.fontSize = "100px";
-			this.buttonToNextLevel.style.width = "100%";
+			this.buttonToNextLevel.className += " garevna_gameFinishText";
+			// this.buttonToNextLevel.style.fontSize = "100px";
+			// this.buttonToNextLevel.style.width = "100%";
 			this.buttonToNextLevel.style.color = "red";
-			this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)";
-			this.buttonToNextLevel.style.border = 'none';
+			// this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)";
+			// this.buttonToNextLevel.style.border = 'none';
 			this.buttonToNextLevel.onclick = function (event) { location = '/'; }
 			this.mainScene.appendChild(this.buttonToNextLevel);
 		}
@@ -326,13 +327,13 @@ function CoursewareConstructor () {
 			this.mainScene.innerHTML = '';
 			if ( this.scorePanel.progressBar.value == this.maxScore ) {
 				this.mainScene.style.backgroundImage = 'url(' + this.successPictureURL + ')';
-				this.mainScene.style.backgroundPosition = 'top center';
+				// this.mainScene.style.backgroundPosition = 'top center';
 				this.buttonToNextLevel.innerHTML = "YOU WIN!";
 				this.buttonToNextLevel.style.color = "white";
 			}
 			else {
 				this.mainScene.style.backgroundImage = 'url(' + this.gameOverPictureURL + ')';
-				this.mainScene.style.backgroundPosition = 'center center';
+				// this.mainScene.style.backgroundPosition = 'center center';
 				this.buttonToNextLevel.innerHTML = "GAME OVER";
 				this.buttonToNextLevel.style.color = "#2BF513";
 			}
