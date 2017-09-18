@@ -349,7 +349,7 @@ function CoursewareConstructor () {
 			this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)";
 			
 			this.mainScene.appendChild(this.buttonToNextLevel);
-			this.buttonToNextLevel.onclick = function (event) { location='/'; }
+			this.buttonToNextLevel.onclick = function (event) { window.close(); }
 		}
 		else { this.nextLevelAvailiable = true; }
 	};
