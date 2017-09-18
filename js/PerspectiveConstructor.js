@@ -2,8 +2,8 @@
 // -----------------------------------------------------------------------------------------------------
 function garevna_Perspective ( params ) {
 	
-	this.defaultCentralImage = '/Javascript/anim_gif/object-02.gif';
-	this.defaultSideImage = '/Javascript/anim_gif/stars-1.gif';
+	this.defaultCentralImage = '../images/object-02.gif';
+	this.defaultSideImage = '../images/stars-1.gif';
 	this.parentNode = params.parentObject || document.body[0];
 	
 	this.nestedObject = params.nestedObject || null;
