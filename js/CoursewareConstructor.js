@@ -60,10 +60,10 @@ function CoursewareConstructor () {
 			coursewareWorker.postMessage ( sourceURL );
 			coursewareWorker.addEventListener('message', function(e) {
 				var $data = e.data;
-				//coursewareWorker.terminate();
-				//coursewareWorker = undefined;
-				if (e.data) callback ( $data );
-				else alert ("Ограниченная функциональность. Отсутствуют библиотеки: " + sourceURL);
+				coursewareWorker.terminate();
+				coursewareWorker = undefined;
+				if (e.data) { callback ( $data ); }
+				else { alert("Ограниченная функциональность. Отсутствуют библиотеки: " + sourceURL); }
 			}, false);
 		}
 		catch (err) { alert("К сожалению, в Вашем браузере полная функциональность невозможна"); }
@@ -82,7 +82,7 @@ function CoursewareConstructor () {
 	function createMainScene () {
 		this.mainScene.style.display = 'block';
 		this.mainScene.innerHTML = '';
-		// this.mainScene.style.backgroundSize = "20%";
+		this.mainScene.style.backgroundSize = "20%";
 		this.resizeMainScene();
 	};
 	// =========================================================================================== resizeMainScene
@@ -101,7 +101,7 @@ function CoursewareConstructor () {
 		this.maxLives = $data.lives;
 		//this.livesPictureURL = $data.livesPictureURL;
 		var sheet = document.createElement('style');
-		sheet.innerHTML = '.livesPanel > div { background-image: url(' + $data.livesPictureURL  + '); }';
+		sheet.innerHTML = '.livesPanel > div { background-image: url(' +$data.livesPictureURL  + '); }';
 		document.head.appendChild(sheet);
 		this.gameOverPictureURL = $data.gameOverPictureURL;
 		this.successPictureURL = $data.successPictureURL;
@@ -307,10 +307,9 @@ function CoursewareConstructor () {
 		this.lives--;
 		if (this.lives == 0) {
 			this.mainScene.innerHTML = '';
-			// this.mainScene.style.backgroundImage = 'url(' + this.failurePictureURL + ')';
-			// this.mainScene.style.backgroundSize = 'cover';
-			// this.mainScene.style.backgroundPosition = 'top center';
-			this.mainScene.className = "mainScene  garevna_gameOver";
+			this.mainScene.style.backgroundImage = 'url(' + this.failurePictureURL + ')';
+			this.mainScene.style.backgroundSize = 'cover';
+			this.mainScene.style.backgroundPosition = 'top center';
 			this.buttonToNextLevel.innerHTML = "FAILURE";
 			this.buttonToNextLevel.style.fontSize = "100px";
 			this.buttonToNextLevel.style.width = "100%";
@@ -326,21 +325,18 @@ function CoursewareConstructor () {
 		if ( this.levelNum == this.levels.length -1 ) {
 			this.mainScene.innerHTML = '';
 			if ( this.scorePanel.progressBar.value == this.maxScore ) {
-				// this.mainScene.style.backgroundImage = 'url(' + this.successPictureURL + ')';
-				// this.mainScene.style.backgroundPosition = 'top center';
-				this.style = "";
-				this.mainScene.className = "mainScene  garevna_gameVictory";
+				this.mainScene.style.backgroundImage = 'url(' + this.successPictureURL + ')';
+				this.mainScene.style.backgroundPosition = 'top center';
 				this.buttonToNextLevel.innerHTML = "YOU WIN!";
 				this.buttonToNextLevel.style.color = "white";
 			}
 			else {
-				// this.mainScene.style.backgroundImage = 'url(' + this.gameOverPictureURL + ')';
-				// this.mainScene.style.backgroundPosition = 'center center';
-				this.mainScene.className = "mainScene  garevna_gameFailure";
+				this.mainScene.style.backgroundImage = 'url(' + this.gameOverPictureURL + ')';
+				this.mainScene.style.backgroundPosition = 'center center';
 				this.buttonToNextLevel.innerHTML = "GAME OVER";
 				this.buttonToNextLevel.style.color = "#2BF513";
 			}
-			// this.mainScene.style.backgroundSize = 'cover';
+			this.mainScene.style.backgroundSize = 'cover';
 			this.mainScene.innerHTML += '<h1>Набрано очков: ' + this.scorePanel.progressBar.value;
 			this.mainScene.innerHTML += ' из ' + this.maxScore + ' возможных</h1>';
 			this.mainScene.innerHTML += '<h1>Осталось жизней: ' + this.lives;
