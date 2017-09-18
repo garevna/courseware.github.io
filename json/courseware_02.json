@@ -1,5 +1,5 @@
 {
-  "maxScore": 37,
+  "maxScore": 43,
   "lives": 10,
   "livesPictureURL": "/js_courseware.github.io/images/cosmonaft.gif",
   "gameOverPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZVhfeXVPblhxNzA",
@@ -338,6 +338,39 @@
       "wrongInputPicture": {
         "url": "/js_courseware.github.io/images/simpson-and-ball.gif",
         "width": "150px"
+      }
+    },
+    {
+      "type": "choice",
+      "centralPicture": "/js_courseware.github.io/images/player.gif",
+      "question": "Типы данных JavaScript",
+      "rightChoicesNums": [
+        0,
+        3,
+        5
+      ],
+      "balls": 1,
+      "choiceVariants": [
+        "undefined",
+        "null",
+        "function",
+        "object",
+        "number",
+        "string",
+        "array",
+        "boolean"
+      ],
+      "choicePicture": {
+        "url": "/js_courseware.github.io/images/goalkeeper.gif",
+        "width": "100px"
+      },
+      "rightChoicePicture": {
+        "url": "/js_courseware.github.io/images/victory-1.gif",
+        "width": "80px"
+      },
+      "wrongChoicePicture": {
+        "url": "/js_courseware.github.io/images/explosion.gif",
+        "width": "80px"
       }
     }
   ]
