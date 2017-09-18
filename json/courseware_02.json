@@ -346,8 +346,11 @@
       "question": "Типы данных JavaScript",
       "rightChoicesNums": [
         0,
+        2,
         3,
-        5
+        4,
+        5,
+        7
       ],
       "balls": 1,
       "choiceVariants": [
@@ -361,7 +364,7 @@
         "boolean"
       ],
       "choicePicture": {
-        "url": "/js_courseware.github.io/images/goalkeeper.gif",
+        "url": "/js_courseware.github.io/images/man-pos-1.gif",
         "width": "100px"
       },
       "rightChoicePicture": {
