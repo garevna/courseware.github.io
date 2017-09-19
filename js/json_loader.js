@@ -26,7 +26,7 @@ function setAnswer () {
 		console.info ( 'self.templates [' + i + '].yBackground: ' + self.templates [i].yBackground );
 		
 	}
-	for ( var i = 0; i < self.answer.levels; i++ ) {
+	for ( var i = 0; i < self.answer.levels.length; i++ ) {
 		console.info ( self.answer.levels [i].template );
 		if ( self.answer.levels [i].template ) self.answer.levels [i] = self.templates [ self.answer.levels [i].template ];
 		console.info ('self.answer.levels [' + i + '].centralBackground: ' + self.answer.levels [i].centralBackground );
