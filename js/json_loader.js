@@ -6,12 +6,12 @@ function transport () {
 var templates = [];
 var templatesRequest = transport ();
 templatesRequest.onreadystatechange = function () {
-	if ( $request.readyState == 4 ) {
-		if ( $request.status == 200 ) {
-			templates = JSON.parse ( $request.responseText );
+	if ( templatesRequest.readyState == 4 ) {
+		if ( templatesRequest.status == 200 ) {
+			templates = JSON.parse ( templatesRequest.responseText );
 			console.log ( templates );
 		}
-		else { console.warn ( 'Templates is not avaliable. Request status: ' + $request.status ); postMessage(null); }
+		else { console.warn ( 'Templates is not avaliable. Request status: ' + templatesRequest.status ); postMessage(null); }
 	}
 }
 templatesRequest.open ( "GET", "../json/templates.json" );
