@@ -9,7 +9,7 @@ this.addEventListener( 'message', function ( e ) {
 	var $request = transport ();
 	$request.onreadystatechange = function () {
 		if ( $request.readyState == 4 ) {
-			if ( $request.status == 200 ) postMessage ( JSON.parse ( $request.responseText) );
+			if ( $request.status == 200 ) { console.log ($request.responseText); postMessage ( JSON.parse ( $request.responseText) ); }
 			else { console.warn ( 'request.status: ' + $request.status ); postMessage(null); }
 		}
 	}
