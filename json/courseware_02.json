@@ -9,7 +9,7 @@
     {
       "type": "choice",
       "centralPicture": "/js_courseware.github.io/images/player.gif",
-      "question": "Что из перечисленного является логическим выражением",
+      "question": "Что из перечисленного является<br/>логическим выражением",
       "rightChoicesNums": [ 1, 4, 6, 7 ],
       "balls": 1,
       "choiceVariants": [
@@ -39,12 +39,12 @@
     {
       "type": "input",
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
-      "question": "Создать элемент div и связанную с ним переменную x в модели",
+      "question": "Вызвать метод changeSize объекта figure в контексте объекта circle",
       "inputLegend": {
-        "before": "var x = document.",
-        "after": "('div');"
+        "before": "var figure = {\n\tthis.width = '50px';\n\tthis.changeSize = function ( newWidth ) { this.width = newWidth + 'px'; }\nvar circle = { this.width = '50px'; }\nfigure.changeSize.",
+        "after": "('circle', [200]);"
       },
-      "rightInput": "createElement",
+      "rightInput": "apply",
       "balls": 3,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/smile-01.gif",
