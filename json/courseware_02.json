@@ -10,22 +10,17 @@
       "type": "choice",
       "centralPicture": "/js_courseware.github.io/images/player.gif",
       "question": "Что из перечисленного является логическим выражением",
-      "rightChoicesNums": [
-        1,
-        4,
-        6,
-        7
-      ],
+      "rightChoicesNums": [ 1, 4, 6, 7 ],
       "balls": 1,
       "choiceVariants": [
         "x = 0;",
         "x || y",
-        "if (!x) return",
+        "y = !x",
         "var z = x ? 0 : 1",
         "x == 1",
         "Math.min (x, y)",
-        "z && t",
-        "x.length != 0"
+        "false",
+        "x != y"
       ],
       "choicePicture": {
         "url": "/js_courseware.github.io/images/goalkeeper.gif",
@@ -342,27 +337,11 @@
     },
     {
       "type": "choice",
-      "centralPicture": "/js_courseware.github.io/images/player.gif",
+      "centralPicture": "https://i.pinimg.com/originals/5f/66/17/5f661738ded47c3c832dc3af650e5636.gif",
       "question": "Типы данных JavaScript",
-      "rightChoicesNums": [
-        0,
-        2,
-        3,
-        4,
-        5,
-        7
-      ],
+      "rightChoicesNums": [ 0, 2, 3, 4, 5, 7 ],
       "balls": 1,
-      "choiceVariants": [
-        "undefined",
-        "null",
-        "function",
-        "object",
-        "number",
-        "string",
-        "array",
-        "boolean"
-      ],
+      "choiceVariants": [ "undefined", "null", "function", "object", "number", "string", "array", "boolean" ],
       "choicePicture": {
         "url": "/js_courseware.github.io/images/man-pos-1.gif",
         "width": "100px"
