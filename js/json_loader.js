@@ -24,7 +24,13 @@ this.addEventListener( 'message', function ( e ) {
 		if ( $request.readyState == 4 ) {
 			if ( $request.status == 200 ) {
 				var answer = JSON.parse ( $request.responseText);
-				console.dir ( answer );
+				for ( var i = 0; i < answer.levels; i++ ) {
+					if ( answer.levels [i].template ) {
+						answer.levels [i] = templates [ answer.levels [i].template ];
+						console.log ( answer.levels [i].template, answer.levels [i] );
+					}
+				}
+				
 				postMessage ( answer );
 			}
 			else { console.warn ( 'request.status: ' + $request.status ); postMessage(null); }
