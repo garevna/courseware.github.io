@@ -1,1 +1,14 @@
-
+{
+    "googleDisk":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvS",
+    "defaultCentralImage":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSQmJOTU52QWhHZXM",
+    "defaultSideImage":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZ0Q4YWxrT1RnVjA",
+    "personage":"/js_courseware.github.io/images/astronaut.gif",
+    "levels": [
+       {
+         "xBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSRDBsaXNWc1d4R3M",
+         "topBackground":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSYlNGSjdyNS1KWUk",
+         "bottomBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSdmdBTklEeHRrWGM",
+         "centralBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSSWR1eTd2M2d0dG8"
+       }
+    ]
+}
