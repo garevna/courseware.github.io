@@ -1,56 +1,24 @@
 {
     "googleDisk":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvS",
-    "defaultCentralImage":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSQmJOTU52QWhHZXM",
-    "defaultSideImage":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZ0Q4YWxrT1RnVjA",
+    "defaultCentralImage":"https://i.pinimg.com/originals/84/8a/88/848a88195bfac63035e17e47122ac4d9.gif",
+    "defaultSideImage":"https://i.pinimg.com/originals/05/0c/1b/050c1bad6ad1de0269bde708db113414.gif",
     "personage":"/js_courseware.github.io/images/astronaut.gif",
     "levels":[
-       {
-           "template":0
-       },
-       {
-           "template":1
-       },
-       {
-           "template":2
-       },
-       {
-           "template":3
-       },
-       {
-           "template":4
-       },
-       {
-           "template":5
-       },
-       {
-           "template":6
-       },
-       {
-           "template":7
-       },
-       {
-           "template":8
-       },
-       {
-           "template":9
-       },
-       {
-           "template":10
-       },
-       {
-           "template":11
-       },
-       {
-           "template":12
-       },
-       {
-           "template":13
-       },
-       {
-           "template":14
-       },
-       {
-           "template":15
-       }
+       { "template":15 },
+       { "template":14 },
+       { "template":13 },
+       { "template":12 },
+       { "template":11 },
+       { "template":10 },
+       { "template":9 },
+       { "template":8 },
+       { "template":7 },
+       { "template":6 },
+       { "template":5 },
+       { "template":4 },
+       { "template":3 },
+       { "template":2 },
+       { "template":1 },
+       { "template":16 }
     ]
 }
