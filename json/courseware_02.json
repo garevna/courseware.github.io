@@ -45,7 +45,7 @@
         "after": "('circle', [200]);"
       },
       "rightInput": "apply",
-      "balls": 3,
+      "balls": 5,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/smile-01.gif",
         "width": "100px"
@@ -63,7 +63,7 @@
       "rightContent": "var collection = document.getElementsByClassName('myClass'); \rfor (var j = 0; j < collection.length; j++) { \r\tcollection[j].style.color = 'red'; \r}",
       "contentCols": 100,
       "contentRows": 5,
-      "balls": 10,
+      "balls": 7,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/victory-1.gif",
         "width": "150px"
@@ -76,7 +76,7 @@
     {
       "type": "choice",
       "centralPicture": "/js_courseware.github.io/images/player.gif",
-      "question": "Укажите встроенные свойства html элементов",
+      "question": "Укажите встроенные свойства<br/>html элементов",
       "rightChoicesNums": [
         0,
         1,
@@ -135,7 +135,7 @@
       "rightContent": "var x = 5;\rvar y = 7;\rvar z = {};",
       "contentCols": 50,
       "contentRows": 4,
-      "balls": 3,
+      "balls": 5,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "300px"
@@ -149,10 +149,8 @@
       "type": "choice",
       "centralPicture": "/js_courseware.github.io/images/player.gif",
       "question": "С помощью какого метода можно<br/>создать новый элемент DOM",
-      "rightChoicesNums": [
-        2
-      ],
-      "balls": 1,
+      "rightChoicesNums": [ 2 ],
+      "balls": 2,
       "choiceVariants": [
         "getElementById",
         "appendChild",
@@ -185,7 +183,7 @@
         "after": "= 'clickHandler ( event )';"
       },
       "rightInput": "onclick",
-      "balls": 3,
+      "balls": 2,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "300px"
@@ -204,7 +202,7 @@
         "after": " += '&lt;p>Это я добавил&lt;/p>';"
       },
       "rightInput": "innerHTML",
-      "balls": 3,
+      "balls": 4,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "300px"
@@ -218,12 +216,7 @@
       "type": "choice",
       "centralPicture": "/js_courseware.github.io/images/player.gif",
       "question": "Укажите свойства объекта<br/>Event",
-      "rightChoicesNums": [
-        5,
-        7,
-        "",
-        ""
-      ],
+      "rightChoicesNums": [ 5, 7 ],
       "balls": 1,
       "choiceVariants": [
         "innerHTML",
@@ -325,7 +318,7 @@
       "rightContent": "var div = document.createElement('div'); \rdiv.innerHTML = 'Это новый элемент';\r\tdocument.body.appendChild(div);\r",
       "contentCols": 100,
       "contentRows": 7,
-      "balls": 8,
+      "balls": 10,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "300px"
@@ -360,8 +353,8 @@
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
       "question": "Создать локальную переменную x экземпляра в конструкторе и присвоить ей значение 0",
       "inputLegend": {
-        "before": "function Sample ( params ) {\n\t",
-        "after": "\n}"
+        "before": "function Sample ( params ) {<br/>&nbsp;&nbsp;&nbsp;",
+        "after": "<br/>}"
       },
       "rightInput": "var x=0;",
       "balls": 3,
