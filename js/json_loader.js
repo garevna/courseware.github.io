@@ -20,7 +20,11 @@ function getTemplates () {
 function setAnswer () {
 	if ( !self.templates || !self.answer ) return;
 	console.info ( 'answer is ready' );
+	for ( var i = 0; i < self.templates.length; i++ ) {
+		console.info ( self.templates [i].centralBackground );
+	}
 	for ( var i = 0; i < self.answer.levels; i++ ) {
+		console.info ( self.answer.levels [i].template );
 		if ( self.answer.levels [i].template ) self.answer.levels [i] = self.templates [ self.answer.levels [i].template ];
 	}
 	postMessage ( self.answer );
