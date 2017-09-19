@@ -26,6 +26,7 @@ this.addEventListener( 'message', function ( e ) {
 			if ( $request.status == 200 ) {
 				var answer = JSON.parse ( $request.responseText);
 				if ( perspective && self.templates ) {
+					console.log ('templates: ', self.templates);
 					for ( var i = 0; i < answer.levels; i++ ) {
 						if ( answer.levels [i].template ) {
 							answer.levels [i] = self.templates [ answer.levels [i].template ];
