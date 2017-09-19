@@ -20,7 +20,7 @@ function getTemplates () {
 function setAnswer () {
 	if ( !self.templates || !self.answer ) return;
 	console.info ( 'answer is ready' );
-	for ( var i = 0; i < answer.levels; i++ ) {
+	for ( var i = 0; i < self.answer.levels; i++ ) {
 		if ( self.answer.levels [i].template ) self.answer.levels [i] = self.templates [ self.answer.levels [i].template ];
 	}
 	postMessage ( self.answer );
@@ -28,8 +28,7 @@ function setAnswer () {
 
 this.addEventListener( 'message', function ( e ) {
 	var sourceURL = e.data;
-	var perspective = sourceURL.indexOf ( 'perspective' ) >= 0;
-	if ( perspective ) getTemplates ();
+	if ( sourceURL.indexOf ( 'perspective' ) >= 0 ) getTemplates ();
 	var $request = transport ();
 	$request.onreadystatechange = function () {
 		if ( $request.readyState == 4 ) {
