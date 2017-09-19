@@ -5,9 +5,9 @@
     "personage":"/js_courseware.github.io/images/astronaut.gif",
     "levels": [
        {
-         "xBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSUXc0a2JoWjVGUkE",
-         "yBackground":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSUXc0a2JoWjVGUkE",
-         "centralBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSMGI1UnRHQ3VWZ0U"
+         "xBackground": "https://i.pinimg.com/originals/f4/34/e8/f434e86cdc40ef068b7783d150f8a65c.gif",
+         "yBackground":"https://i.pinimg.com/originals/8a/95/c3/8a95c38d99e4596f78c401be4bff5d6c.gif",
+         "centralBackground": "https://i.pinimg.com/originals/84/8a/88/848a88195bfac63035e17e47122ac4d9.gif"
        }
     ]
 }
