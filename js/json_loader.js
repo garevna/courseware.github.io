@@ -21,11 +21,17 @@ function setAnswer () {
 	if ( !self.templates || !self.answer ) return;
 	console.info ( 'answer is ready' );
 	for ( var i = 0; i < self.templates.length; i++ ) {
-		console.info ( self.templates [i].centralBackground );
+		console.info ( 'self.templates [' + i + '].centralBackground: ' + self.templates [i].centralBackground );
+		console.info ( 'self.templates [' + i + '].xBackground: ' + self.templates [i].xBackground );
+		console.info ( 'self.templates [' + i + '].yBackground: ' + self.templates [i].yBackground );
+		
 	}
 	for ( var i = 0; i < self.answer.levels; i++ ) {
 		console.info ( self.answer.levels [i].template );
 		if ( self.answer.levels [i].template ) self.answer.levels [i] = self.templates [ self.answer.levels [i].template ];
+		console.info ('self.answer.levels [' + i + '].centralBackground: ' + self.answer.levels [i].centralBackground );
+		console.info ('self.answer.levels [' + i + '].xBackground: ' + self.answer.levels [i].xBackground );
+		console.info ('self.answer.levels [' + i + '].yBackground: ' + self.answer.levels [i].xBackground );
 	}
 	postMessage ( self.answer );
 }
