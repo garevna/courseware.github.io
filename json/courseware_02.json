@@ -354,6 +354,25 @@
         "url": "/js_courseware.github.io/images/explosion.gif",
         "width": "80px"
       }
+    },
+    {
+      "type": "input",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Создать локальную переменную x экземпляра в конструкторе и присвоить ей значение 0",
+      "inputLegend": {
+        "before": "function Sample ( params ) {\n\t",
+        "after": "\n}"
+      },
+      "rightInput": "var x=0;",
+      "balls": 3,
+      "rightInputPicture": {
+        "url": "/js_courseware.github.io/images/smile-01.gif",
+        "width": "100px"
+      },
+      "wrongInputPicture": {
+        "url": "/js_courseware.github.io/images/explosion.gif",
+        "width": "80px"
+      }
     }
   ]
 }
