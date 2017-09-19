@@ -4,7 +4,7 @@ function transport () {
 	return requestVar;
 };
 
-if ( !templates ) {
+function getTemplates () {
 	var templatesRequest = transport ();
 	templatesRequest.onreadystatechange = function () {
 		if ( templatesRequest.readyState == 4 ) {
@@ -19,6 +19,7 @@ if ( !templates ) {
 this.addEventListener( 'message', function ( e ) {
 	var sourceURL = e.data;
 	var perspective = sourceURL.indexOf ( 'perspective' ) >= 0;
+	if ( perspective ) getTemplates ();
 	var $request = transport ();
 	$request.onreadystatechange = function () {
 		if ( $request.readyState == 4 ) {
