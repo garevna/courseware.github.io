@@ -32,13 +32,15 @@ function setAnswer () {
 
 this.addEventListener( 'message', function ( e ) {
 	var sourceURL = e.data;
-	if ( sourceURL.indexOf ( 'perspective' ) >= 0 ) getTemplates ();
+	var perspective = sourceURL.indexOf ( 'perspective' ) >= 0;
+	if ( perspective ) getTemplates ();
 	var $request = transport ();
 	$request.onreadystatechange = function () {
 		if ( $request.readyState == 4 ) {
 			if ( $request.status == 200 ) {
 				self.answer = JSON.parse ( $request.responseText);
-				setAnswer();
+				if ( perspective ) setAnswer();
+				else postMessage ( self.answer );
 			}
 			else { console.warn ( 'request.status: ' + $request.status ); postMessage(null); }
 		}
