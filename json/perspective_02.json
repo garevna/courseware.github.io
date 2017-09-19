@@ -5,22 +5,13 @@
     "personage":"/js_courseware.github.io/images/astronaut.gif",
     "levels":[
        {
-           "template":0,
-         "xBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSckttV191bFp1MkE",
-         "yBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSckttV191bFp1MkE",
-         "centralBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSRDBsaXNWc1d4R3M"
+           "template":0
        },
        {
-           "template":1,
-         "xBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZ0Q4YWxrT1RnVjA",
-         "yBackground":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZ0Q4YWxrT1RnVjA",
-         "centralBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSQXFvVlQ1Q0dWYVE"
+           "template":1
        },
        {
-           "template":2,
-         "xBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSUXc0a2JoWjVGUkE",
-         "yBackground":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSUXc0a2JoWjVGUkE",
-         "centralBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSSGZ5SmZpVGdxWEk"
+           "template":2
        },
        {
            "template":3,
