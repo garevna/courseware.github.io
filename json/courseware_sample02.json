@@ -1,0 +1,29 @@
+{
+  "maxScore": 1,
+  "lives": 10,
+  "livesPictureURL": "/js_courseware.github.io/images/cosmonaft.gif",
+  "gameOverPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZVhfeXVPblhxNzA",
+  "successPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSd3U0S09YUkkwanc",
+  "failurePictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSMzNOUGc3QndEOGM",
+  "levels": [
+    {
+      "type": "input",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Создайте пустой массив",
+      "inputLegend": {
+        "before": "var arr = ",
+        "after": ";"
+      },
+      "rightInput": "[]",
+      "balls": 1,
+      "rightInputPicture": {
+        "url": "/js_courseware.github.io/images/victory_transparent.gif",
+        "width": "300px"
+      },
+      "wrongInputPicture": {
+        "url": "/js_courseware.github.io/images/explosion.gif",
+        "width": "100px"
+      }
+    }
+  ]
+}
