@@ -39,9 +39,9 @@
     {
       "type": "input",
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
-      "question": "<span style='color:lightblue'>Вызвать метод changeSize объекта figure в контексте объекта circle</span>",
+      "question": "<span style='color:lightblue'>Вызвать метод <span style='color:lightgreen'>changeSize</span> объекта <span style='color:lightgreen'>figure</span> в контексте объекта <span style='color:lightgreen'>circle</span></span>",
       "inputLegend": {
-        "before": "var figure = {<br/>this.width = '50px';<br/>this.changeSize = function ( newWidth ) { this.width = newWidth + 'px'; }<br/>}<br/><br/>var circle = { this.width = '50px'; }<br/><br/>figure.changeSize.",
+        "before": "var figure = {<br/>&nbsp;&nbsp;&nbsp;this.width = '50px';<br/>&nbsp;&nbsp;&nbsp;this.changeSize = function ( newWidth ) { this.width = newWidth + 'px'; }<br/>}<br/><br/>var circle = { this.width = '50px'; }<br/><br/>figure.changeSize.",
         "after": "('circle', [200]);"
       },
       "rightInput": "apply",
