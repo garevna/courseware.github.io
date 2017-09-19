@@ -41,7 +41,7 @@
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
       "question": "Вызвать метод changeSize объекта figure в контексте объекта circle",
       "inputLegend": {
-        "before": "var figure = {<br/>this.width = '50px';<br/>this.changeSize = function ( newWidth ) { this.width = newWidth + 'px'; }<br/>var circle = { this.width = '50px'; }<br/><br/>figure.changeSize.",
+        "before": "<span stylevar figure = {<br/>this.width = '50px';<br/>this.changeSize = function ( newWidth ) { this.width = newWidth + 'px'; }<br/>}<br/><br/>var circle = { this.width = '50px'; }<br/><br/>figure.changeSize.",
         "after": "('circle', [200]);"
       },
       "rightInput": "apply",
