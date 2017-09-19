@@ -3,13 +3,13 @@ function transport () {
 	else var requestVar = new ActiveXObject ( "Microsoft.XMLHTTP" );
 	return requestVar;
 };
-var templates = [];
+templates = [];
 var templatesRequest = transport ();
 templatesRequest.onreadystatechange = function () {
 	if ( templatesRequest.readyState == 4 ) {
 		if ( templatesRequest.status == 200 ) {
 			templates = JSON.parse ( templatesRequest.responseText );
-			console.log ( templates );
+			console.dir ( templates );
 		}
 		else { console.warn ( 'Templates is not avaliable. Request status: ' + templatesRequest.status ); postMessage(null); }
 	}
@@ -22,7 +22,11 @@ this.addEventListener( 'message', function ( e ) {
 	var $request = transport ();
 	$request.onreadystatechange = function () {
 		if ( $request.readyState == 4 ) {
-			if ( $request.status == 200 ) postMessage ( JSON.parse ( $request.responseText) );
+			if ( $request.status == 200 ) {
+				var answer = JSON.parse ( $request.responseText);
+				console.dir ( answer );
+				postMessage ( answer );
+			}
 			else { console.warn ( 'request.status: ' + $request.status ); postMessage(null); }
 		}
 	}
