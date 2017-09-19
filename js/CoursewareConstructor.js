@@ -124,7 +124,7 @@ function CoursewareConstructor () {
 	function coursewareNextLevel () {
 		if (!this.ready) { console.error('Not ready: data is not loaded yet'); return; }
 		this.levelNum++;
-		if ( this.levelNum == this.levels.length-1 ) { this.finish(); }
+		if ( this.levelNum == this.levels.length ) { this.finish(); }
 		var levelData = this.levels[this.levelNum];
 		
 		this.createMainScene();
@@ -308,8 +308,8 @@ function CoursewareConstructor () {
 		if (this.lives == 0) {
 			this.mainScene.innerHTML = '';
 			this.mainScene.style.backgroundImage = 'url(' + this.failurePictureURL + ')';
-			// this.mainScene.style.backgroundSize = 'cover';
-			// this.mainScene.style.backgroundPosition = 'top center';
+			this.mainScene.style.backgroundSize = 'cover';
+			this.mainScene.style.backgroundPosition = 'top center';
 			this.buttonToNextLevel.innerHTML = "FAILURE";
 			this.buttonToNextLevel.className += " garevna_gameFinishText";
 			// this.buttonToNextLevel.style.fontSize = "100px";
