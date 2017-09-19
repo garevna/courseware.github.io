@@ -14,7 +14,7 @@ templatesRequest.onreadystatechange = function () {
 		else { console.warn ( 'Templates is not avaliable. Request status: ' + templatesRequest.status ); postMessage(null); }
 	}
 }
-templatesRequest.open ( "GET", "../json/templates.json" );
+templatesRequest.open ( "GET", "json/templates.json" );
 templatesRequest.send ();
 
 this.addEventListener( 'message', function ( e ) {
