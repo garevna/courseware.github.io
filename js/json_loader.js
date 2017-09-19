@@ -12,7 +12,7 @@ function getTemplates () {
 			else console.warn ( 'Templates is not avaliable. Request status: ' + templatesRequest.status );
 		}
 	}
-	templatesRequest.open ( "GET", "json/templates.json" );
+	templatesRequest.open ( "GET", "../json/templates.json" );
 	templatesRequest.send ();
 }
 
