@@ -38,7 +38,7 @@
     },
     {
       "type": "input",
-      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "centralPicture": "https://i.pinimg.com/originals/f3/5a/a3/f35aa38ae3189abda525310dd743a5c3.gif",
       "question": "<span style='color:lightblue'>Вызвать метод <span style='color:lightgreen'>changeSize</span> объекта <span style='color:lightgreen'>figure</span> в контексте объекта <span style='color:lightgreen'>circle</span></span>",
       "inputLegend": {
         "before": "var figure = {<br/>&nbsp;&nbsp;&nbsp;this.width = '50px';<br/>&nbsp;&nbsp;&nbsp;this.changeSize = function ( newWidth ) { this.width = newWidth + 'px'; }<br/>}<br/><br/>var circle = { this.width = '50px'; }<br/><br/>figure.changeSize.",
