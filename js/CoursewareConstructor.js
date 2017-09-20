@@ -182,6 +182,7 @@ function CoursewareConstructor () {
 		inputElement.type = 'text';
 		inputElement.size = "1";
 		inputElement.placeholder = "?";
+		inputElement.title = "Не забудьте нажать Enter";
 		inputElement.oninput = function ( event ) { event.target.size = Math.max(event.target.value.length-1, 1); }
 		inputContainer.appendChild(inputElement);
 		var label = document.createElement('span');
