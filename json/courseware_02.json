@@ -52,7 +52,7 @@
       },
       "wrongInputPicture": {
         "url": "/js_courseware.github.io/images/punish.gif",
-        "width": "80px"
+        "width": "150px"
       }
     },
     {
@@ -114,11 +114,11 @@
       "balls": 1,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/victory_transparent.gif",
-        "width": "300px"
+        "width": "250px"
       },
       "wrongInputPicture": {
         "url": "/js_courseware.github.io/images/punish.gif",
-        "width": "100px"
+        "width": "150px"
       }
     },
     {
@@ -132,7 +132,7 @@
       "balls": 5,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/victory_transparent.gif",
-        "width": "300px"
+        "width": "250px"
       },
       "wrongInputPicture": {
         "url": "/js_courseware.github.io/images/punish.gif",
@@ -165,7 +165,7 @@
       },
       "wrongChoicePicture": {
         "url": "/js_courseware.github.io/images/punish.gif",
-        "width": "120px"
+        "width": "150px"
       }
     },
     {
@@ -180,11 +180,11 @@
       "balls": 2,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/victory_transparent.gif",
-        "width": "300px"
+        "width": "250px"
       },
       "wrongInputPicture": {
         "url": "/js_courseware.github.io/images/punish.gif",
-        "width": "100px"
+        "width": "150px"
       }
     },
     {
@@ -199,16 +199,16 @@
       "balls": 4,
       "rightInputPicture": {
         "url": "/js_courseware.github.io/images/victory_transparent.gif",
-        "width": "300px"
+        "width": "250px"
       },
       "wrongInputPicture": {
         "url": "/js_courseware.github.io/images/punish.gif",
-        "width": "100px"
+        "width": "150px"
       }
     },
     {
       "type": "choice",
-      "centralPicture": "/js_courseware.github.io/images/alien-walk.gif",
+      "centralPicture": "/js_courseware.github.io/images/voin.gif",
       "question": "Укажите свойства объекта<br/>Event",
       "rightChoicesNums": [ 5, 7 ],
       "balls": 1,
@@ -232,7 +232,7 @@
       },
       "wrongChoicePicture": {
         "url": "/js_courseware.github.io/images/punish.gif",
-        "width": "120px"
+        "width": "150px"
       }
     },
     {
