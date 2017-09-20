@@ -8,7 +8,7 @@
   "levels": [
     {
       "type": "choice",
-      "centralPicture": "/js_courseware.github.io/images/player.gif",
+      "centralPicture": "/js_courseware.github.io/images/robot_2.gif",
       "question": "Что из перечисленного является<br/>логическим выражением",
       "rightChoicesNums": [ 1, 4, 6, 7 ],
       "balls": 1,
@@ -23,16 +23,16 @@
         "x != y"
       ],
       "choicePicture": {
-        "url": "/js_courseware.github.io/images/goalkeeper.gif",
+        "url": "/js_courseware.github.io/images/alien-2.gif",
         "width": "100px",
         "height": "100px"
       },
       "rightChoicePicture": {
-        "url": "/js_courseware.github.io/images/goalkeeper-3.gif",
+        "url": "/js_courseware.github.io/images/victory_transparent.gif",
         "width": "100px"
       },
       "wrongChoicePicture": {
-        "url": "/js_courseware.github.io/images/explosion.gif",
+        "url": "/js_courseware.github.io/images/punish.gif",
         "width": "100px"
       }
     },
