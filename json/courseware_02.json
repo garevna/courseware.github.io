@@ -141,7 +141,7 @@
     },
     {
       "type": "choice",
-      "centralPicture": "/js_courseware.github.io/images/alien-run.gif",
+      "centralPicture": "/js_courseware.github.io/images/aliens.gif",
       "question": "С помощью какого метода можно<br/>создать новый элемент DOM",
       "rightChoicesNums": [ 2 ],
       "balls": 2,
