@@ -104,7 +104,7 @@
     },
     {
       "type": "input",
-      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "centralPicture": "https://i.pinimg.com/originals/f3/5a/a3/f35aa38ae3189abda525310dd743a5c3.gif",
       "question": "Создайте пустой массив",
       "inputLegend": {
         "before": "var arr = ",
@@ -170,7 +170,7 @@
     },
     {
       "type": "input",
-      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "centralPicture": "https://i.pinimg.com/originals/f3/5a/a3/f35aa38ae3189abda525310dd743a5c3.gif",
       "question": "Назначить обработчика события click для кнопки btn",
       "inputLegend": {
         "before": "btn.",
@@ -189,7 +189,7 @@
     },
     {
       "type": "input",
-      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "centralPicture": "https://i.pinimg.com/originals/f3/5a/a3/f35aa38ae3189abda525310dd743a5c3.gif",
       "question": "Дополнить контент html-элемента main тегом &lt;p>Это я добавил&lt;/p>",
       "inputLegend": {
         "before": "document.getElementsByTagName('main')[0].",
@@ -333,7 +333,7 @@
     },
     {
       "type": "input",
-      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "centralPicture": "https://i.pinimg.com/originals/f3/5a/a3/f35aa38ae3189abda525310dd743a5c3.gif",
       "question": "Создать локальную переменную x экземпляра в конструкторе и присвоить ей значение 0",
       "inputLegend": {
         "before": "function Sample ( params ) {<br/>&nbsp;&nbsp;&nbsp;",
