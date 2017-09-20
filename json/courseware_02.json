@@ -51,7 +51,7 @@
         "width": "100px"
       },
       "wrongInputPicture": {
-        "url": "/js_courseware.github.io/images/explosion.gif",
+        "url": "/js_courseware.github.io/images/punish.gif",
         "width": "80px"
       }
     },
@@ -69,7 +69,7 @@
         "width": "150px"
       },
       "wrongInputPicture": {
-        "url": "/js_courseware.github.io/images/simpson-and-ball.gif",
+        "url": "/js_courseware.github.io/images/punish.gif",
         "width": "150px"
       }
     },
@@ -117,7 +117,7 @@
         "width": "300px"
       },
       "wrongInputPicture": {
-        "url": "/js_courseware.github.io/images/explosion.gif",
+        "url": "/js_courseware.github.io/images/punish.gif",
         "width": "100px"
       }
     },
@@ -135,7 +135,7 @@
         "width": "300px"
       },
       "wrongInputPicture": {
-        "url": "/js_courseware.github.io/images/simpson-and-ball.gif",
+        "url": "/js_courseware.github.io/images/punish.gif",
         "width": "150px"
       }
     },
@@ -164,8 +164,8 @@
         "width": "80px"
       },
       "wrongChoicePicture": {
-        "url": "/js_courseware.github.io/images/explosion.gif",
-        "width": "80px"
+        "url": "/js_courseware.github.io/images/punish.gif",
+        "width": "120px"
       }
     },
     {
@@ -183,7 +183,7 @@
         "width": "300px"
       },
       "wrongInputPicture": {
-        "url": "/js_courseware.github.io/images/explosion.gif",
+        "url": "/js_courseware.github.io/images/punish.gif",
         "width": "100px"
       }
     },
@@ -202,7 +202,7 @@
         "width": "300px"
       },
       "wrongInputPicture": {
-        "url": "/js_courseware.github.io/images/explosion.gif",
+        "url": "/js_courseware.github.io/images/punish.gif",
         "width": "100px"
       }
     },
@@ -231,8 +231,8 @@
         "width": "80px"
       },
       "wrongChoicePicture": {
-        "url": "/js_courseware.github.io/images/explosion.gif",
-        "width": "80px"
+        "url": "/js_courseware.github.io/images/punish.gif",
+        "width": "120px"
       }
     },
     {
