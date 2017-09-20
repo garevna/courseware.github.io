@@ -109,8 +109,8 @@ function CoursewareConstructor () {
 		this.levels = $data.levels;
 		this.maxScore = 0;
 		for ( var j = 0; j < this.levels.length; j++) {
-			console.log ('levels[', j, ']: ', this.levels[j]);
-			this.maxScore += this.levels[j].balls;
+			var q =  ( this.levels[j].type == 'choice' ) ? this.levels[j].rightChoicesNums.length) : 1;
+			this.maxScore += this.levels[j].balls * q;
 		}
 		this.ready = true;
 		$data = null;
