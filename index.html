@@ -51,7 +51,7 @@
 	var sourceNum = location.hash.substr(1,location.hash.length);
 	courseware.init('../json/courseware_' + sourceNum + '.json');
 	
-	garevnaCourseware.loadData ( '../json/perspective_' + sourceNum + '.json', perspectiveCallback );
+	garevnaCourseware.loadData ( 'https://garevna.github.io/js_courseware.github.io/json/perspective_' + sourceNum + '.json', perspectiveCallback );
 	
 	function perspectiveCallback ($data) {
 		garevnaCourseware.defaultCentralImage = $data.defaultCentralImage;
