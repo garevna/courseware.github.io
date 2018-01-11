@@ -13,10 +13,10 @@
 	.mainScene {
 		position:fixed;
 		z-index:1100;
-		width:70%;
+		width:80%;
 		height:80%;
-		top:9%;
-		left:20%;
+		top:5%;
+		left:5%;
 		text-align:center;
 		vertical-align:middle;
 		border-radius:5px;
@@ -197,8 +197,8 @@
 	   .livesPanel { width:48px; padding:2px; }
    }
    @media screen and (max-height: 480px) {
-	   .mainScene { top:5%; left:10%; }
-	   .livesPanel { width:70px; padding:2px; }
+	   .mainScene { top:5%; left:5%; width:83%; font-size:12px; }
+	   .livesPanel { width:36px; padding:2px; }
 	   .livesPanel div { width:30px; height:30px; }
    }
    @media screen and (max-width: 420px)  {
