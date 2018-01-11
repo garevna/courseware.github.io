@@ -208,46 +208,61 @@ function CoursewareConstructor () {
 	};
 	// ======================================================================================= constructFindErrorLevel
 	function constructFindErrorLevel ( levelData ) {
-		var inputContainer = document.createElement('div');
-		inputContainer.className = "inputContainer";
-		var inputElement = document.createElement('textarea');
-		inputElement.className = "coursewareTextAreaElement";
-		inputElement.cols = levelData.contentCols;
-		inputElement.rows = levelData.contentRows;
-		inputElement.value = levelData.wrongContent;
-		inputContainer.appendChild(inputElement);
-		var cloneInputElement = document.createElement('textarea');
-		cloneInputElement.className = "coursewareTextAreaElement";
-		cloneInputElement.style.display = 'none';
-		cloneInputElement.value = levelData.rightContent;
-		cloneInputElement.cols = levelData.contentCols;
-		cloneInputElement.rows = levelData.contentRows;
-		inputContainer.appendChild(cloneInputElement);
-		var btn = document.createElement('button');
-		btn.innerHTML = 'Готово';
-		btn.style.fontSize = "20px";
-		inputContainer.appendChild(btn);
-		this.mainScene.appendChild(inputContainer);
+		var inputContainer = document.createElement ( 'div' )
+		this.mainScene.appendChild ( inputContainer )
+		inputContainer.className = "inputContainer"
+		var elems = []
+		var editCodePlace = document.createElement ( 'pre' )
+		inputContainer.appendChild ( editCodePlace )
+		editCodePlace.className = "coursewareTextAreaElement"
+		for ( var i = 0; i < wrongContent.length; i++ ) {
+			elems [i] = document.createElement ( 'p' )
+			editCodePlace.appendChild ( elems [i] )
+			elems [i].innerHTML = levelData.wrongContent [i]
+			elems [i].contentEditable = "true"
+		}
+		function testAnswer () {
+			var rightAnswer = levelData.rightContent.join ( "" )
+			var wrongAnswer = elems.map ( x => x.innerHTML ).join ( "" )
+			var testus = wrongAnswer.split('').map ( x => x.trim () ).join ( "" )
+			var etalon = rightAnswer.split('').map ( x => x.trim () ).join ( "" )
+			return testus === etalon
+		}
+		//inputElement.cols = levelData.contentCols
+		//inputElement.rows = levelData.contentRows
+		//inputElement.value = levelData.wrongContent
+		
+		//var cloneInputElement = document.createElement('textarea')
+		//cloneInputElement.className = "coursewareTextAreaElement"
+		//cloneInputElement.style.display = 'none'
+		//cloneInputElement.value = levelData.rightContent
+		//cloneInputElement.cols = levelData.contentCols
+		//cloneInputElement.rows = levelData.contentRows
+		//inputContainer.appendChild(cloneInputElement)
+		var btn = document.createElement('button')
+		btn.innerHTML = 'Готово'
+		btn.style.fontSize = "20px"
+		inputContainer.appendChild ( btn )
 		
 		btn.addEventListener ('click', function ( event ) {
-			var scene = event.target.parentNode.parentNode;
-			var elem = document.getElementsByClassName("coursewareTextAreaElement")[0];
-			var contr = document.getElementsByClassName("coursewareTextAreaElement")[1];
-			var parentObject = scene.parentObject;
-			var levelData = parentObject.levels[parentObject.levelNum];
-			if ( elem.value != contr.value ) {
-					scene.style.backgroundImage = 'url(' + levelData.wrongInputPicture.url + ')';
-					scene.style.backgroundSize = levelData.wrongInputPicture.width;
-					parentObject.looser();
-				}
-				else {
-					scene.style.backgroundImage = 'url(' + levelData.rightInputPicture.url + ')';
-					scene.style.backgroundSize = levelData.rightInputPicture.width;
-					parentObject.scorePanel.progressBar.value += levelData.balls;
-					parentObject.finish();
-				}
-		});
-	};
+			var result = testAnswer ()
+			var scene = event.target.parentNode.parentNode
+			var elem = document.getElementsByClassName("coursewareTextAreaElement")[0]
+			var contr = document.getElementsByClassName("coursewareTextAreaElement")[1]
+			var parentObject = scene.parentObject
+			var levelData = parentObject.levels [ parentObject.levelNum ]
+			if ( !result ) {
+				scene.style.backgroundImage = 'url(' + levelData.wrongInputPicture.url + ')'
+				scene.style.backgroundSize = levelData.wrongInputPicture.width
+				parentObject.looser()
+			} else {
+				scene.style.backgroundImage = 'url(' + levelData.rightInputPicture.url + ')'
+				scene.style.backgroundSize = levelData.rightInputPicture.width
+				parentObject.scorePanel.progressBar.value += levelData.balls
+				parentObject.finish()
+			}
+		})
+	}
 	// ========================================================================================== constructInputLevel
 	function constructChoiceLevel ( levelData ) {
 		for ( var j = 0; j < levelData.choiceVariants.length; j++ ) {
@@ -272,23 +287,22 @@ function CoursewareConstructor () {
 					targetElem.style.backgroundImage = 'url(' + levelData.rightChoicePicture.url + ')';
 					targetElem.style.width = levelData.rightChoicePicture.width + 'px';
 					targetElem.style.height = levelData.rightChoicePicture.height + 'px';
-					targetElem.parentNode.parentObject.scorePanel.progressBar.value += levelData.balls;
-					targetElem.parentNode.parentObject.finish();
+					targetElem.parentNode.parentObject.scorePanel.progressBar.value += levelData.balls
+					targetElem.parentNode.parentObject.finish()
 				}
 			});
-			this.choiceLevelElements.push(elem);
-			this.mainScene.appendChild(elem);
+			this.choiceLevelElements.push(elem)
+			this.mainScene.appendChild(elem)
 		}
-		this.resizeChoiceLevel ( levelData );
-	};
+		this.resizeChoiceLevel ( levelData )
+	}
 	// ====================================================================================== resizeChoiceLevel
 	function resizeChoiceLevel () {
-		var center = { top: Math.round( ( window.innerHeight - 50 )/2), 
-			      left: Math.round( window.innerWidth * 0.9 /2) }
-		var radius = Math.round(Math.min ( window.innerHeight, window.innerWidth * 0.9 ) * 0.3)
+		var center = { top: Math.round(window.innerHeight/2), left: Math.round(window.innerWidth/2) }
+		var radius = Math.round(Math.min(window.innerHeight, window.innerWidth) * 0.3)
 		var delta = Math.round(radius/Math.sqrt(2))
 		var points = [
-			{ top: center.top - radius, left: center.left },
+		    { top: center.top - radius, left: center.left },
 			{ top: center.top - delta, left: center.left + delta },
 			{ top: center.top, left: center.left + radius },
 			{ top: center.top + delta, left: center.left + delta },
@@ -297,64 +311,70 @@ function CoursewareConstructor () {
 			{ top: center.top, left: center.left - radius },
 			{ top: center.top - delta, left: center.left - delta }
 		]
-		var targets = document.getElementsByClassName("targetElement");
+		var targets = document.getElementsByClassName("targetElement")
 		for ( var j = 0; j < targets.length; j++ ) {
-			targets[j].style.top = points[j].top + 'px';
-			targets[j].style.left = points[j].left + 'px';
-			this.choiceLevelElements[j] = targets[j];
+			targets[j].style.top = points[j].top + 'px'
+			targets[j].style.left = points[j].left + 'px'
+			this.choiceLevelElements[j] = targets[j]
 		}
-	};
+	}
+	// ======================================================================================= formatExit
+	function formatExit ( color ) {
+		this.buttonToNextLevel.style.fontSize = "80px"
+		this.buttonToNextLevel.style.width = "100%"
+		this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
+		this.buttonToNextLevel.style.border = 'none'
+		this.buttonToNextLevel.style.color = color
+		this.buttonToNextLevel.style.textAlign = "center"
+		this.mainScene.appendChild ( this.buttonToNextLevel )
+		this.buttonToNextLevel.onclick = function (event) { location.reload() }
+	}
 	// =============================================================================================== die
 	function die () {
-		this.livesPanel.removeChild(this.livesPanel.children[0]);
-		this.lives--;
-		if (this.lives == 0) {
-			this.mainScene.innerHTML = '';
-			this.mainScene.style.backgroundImage = 'url(' + this.failurePictureURL + ')';
-			this.mainScene.style.backgroundSize = 'cover';
-			this.mainScene.style.backgroundPosition = 'top center';
-			this.buttonToNextLevel.innerHTML = "FAILURE";
-			this.buttonToNextLevel.className += " garevna_gameFinishText";
-			// this.buttonToNextLevel.style.fontSize = "100px";
-			// this.buttonToNextLevel.style.width = "100%";
-			this.buttonToNextLevel.style.color = "red";
-			// this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)";
+		this.livesPanel.removeChild ( this.livesPanel.children [0] )
+		this.lives--
+		if ( this.lives === 0 ) {
+			this.mainScene.innerHTML = ''
+			this.mainScene.style.backgroundImage = 'url(' + this.failurePictureURL + ')'
+			this.mainScene.style.backgroundSize = 'cover'
+			this.mainScene.style.backgroundPosition = 'top center'
+			this.buttonToNextLevel.innerHTML = "FAILURE"
+			this.buttonToNextLevel.className += " garevna_gameFinishText"
+			this.formatExit ( "red" )
+			// this.buttonToNextLevel.style.color = "red"
+			// this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
 			// this.buttonToNextLevel.style.border = 'none';
-			this.buttonToNextLevel.onclick = function (event) { location = '/'; }
-			this.mainScene.appendChild(this.buttonToNextLevel);
+			//this.buttonToNextLevel.onclick = function (event) { location = '/' }
+			// this.mainScene.appendChild ( this.buttonToNextLevel )
 		}
-		else { this.finish(); }
-	};
+		else this.finish ()
+	}
+	// =========================================================================================== gameOver
 	function gameOver () {
 		if ( this.levelNum == this.levels.length -1 ) {
-			this.mainScene.innerHTML = '';
+			this.mainScene.innerHTML = ''
 			if ( this.scorePanel.progressBar.value == this.maxScore ) {
-				this.mainScene.style.backgroundImage = 'url(' + this.successPictureURL + ')';
-				// this.mainScene.style.backgroundPosition = 'top center';
-				this.buttonToNextLevel.innerHTML = "YOU WIN!";
-				this.buttonToNextLevel.style.color = "white";
+				this.mainScene.style.backgroundImage = 'url(' + this.successPictureURL + ')'
+				// this.mainScene.style.backgroundPosition = 'top center'
+				this.buttonToNextLevel.innerHTML = "YOU WIN!"
+				// this.buttonToNextLevel.style.color = "white"
+				this.formatExit ( "white" )
 			}
 			else {
-				this.mainScene.style.backgroundImage = 'url(' + this.gameOverPictureURL + ')';
-				// this.mainScene.style.backgroundPosition = 'center center';
-				this.buttonToNextLevel.innerHTML = "GAME OVER";
-				this.buttonToNextLevel.style.color = "#2BF513";
+				this.mainScene.style.backgroundImage = 'url(' + this.gameOverPictureURL + ')'
+				// this.mainScene.style.backgroundPosition = 'center center'
+				this.buttonToNextLevel.innerHTML = "GAME OVER"
+				// this.buttonToNextLevel.style.color = "#2BF513"
+				this.formatExit ( "#2BF513" )
 			}
-			this.mainScene.style.backgroundSize = 'cover';
-			this.mainScene.innerHTML += '<h1>Набрано очков: ' + this.scorePanel.progressBar.value;
-			this.mainScene.innerHTML += ' из ' + this.maxScore + ' возможных</h1>';
-			this.mainScene.innerHTML += '<h1>Осталось жизней: ' + this.lives;
-			this.mainScene.innerHTML += ' из ' + this.maxLives + '</h1>';
-			
-			this.buttonToNextLevel.style.width = "100%";
-			this.buttonToNextLevel.style.fontSize = "80px";
-			this.buttonToNextLevel.style.bottom = '10%';
-			this.buttonToNextLevel.style.textAlign = 'center';
-			this.buttonToNextLevel.style.textShadow = "5px 5px 5px #00000080";
-			
-			this.mainScene.appendChild(this.buttonToNextLevel);
-			this.buttonToNextLevel.onclick = function (event) { window.close(); }
+			this.mainScene.style.backgroundSize = 'cover'
+			this.mainScene.innerHTML += '<h1>Набрано очков: ' + this.scorePanel.progressBar.value
+			this.mainScene.innerHTML += ' из ' + this.maxScore + ' возможных</h1>'
+			this.mainScene.innerHTML += '<h1>Осталось жизней: ' + this.lives
+			this.mainScene.innerHTML += ' из ' + this.maxLives + '</h1>'
+			// this.mainScene.appendChild ( this.buttonToNextLevel )
+			// this.buttonToNextLevel.onclick = function (event) { window.close(); }
 		}
-		else { this.nextLevelAvailiable = true; }
-	};
+		else this.nextLevelAvailiable = true
+	}
 }
