@@ -1,14 +1,14 @@
 {
   "maxScore": 20,
   "lives": 10,
-  "livesPictureURL": "/Javascript/anim_gif/personages/personage-1.gif",
+  "livesPictureURL": "./images/cosmonaft.gif",
   "gameOverPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZVhfeXVPblhxNzA",
   "successPictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSd3U0S09YUkkwanc",
   "failurePictureURL": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSMzNOUGc3QndEOGM",
   "levels": [
     {
       "type": "choice",
-      "centralPicture": "/Javascript/anim_gif/personages/player.gif",
+      "centralPicture": "./images/astronaut.gif",
       "question": "Что из перечисленного является логическим выражением",
       "rightChoicesNums": [
         1,
@@ -80,7 +80,7 @@
           "    }",
           "}"
       ],
-      "balls": 10,
+      "balls": 5,
       "rightInputPicture": {
         "url": "images/victory-1.gif",
         "width": "150px"
@@ -93,24 +93,18 @@
     {
       "type": "choice",
       "centralPicture": "images/player.gif",
-      "question": "Укажите встроенные свойства html элементов",
-      "rightChoicesNums": [
-        0,
-        1,
-        2,
-        3,
-        7
-      ],
+      "question": "Методы работы со строками",
+      "rightChoicesNums": [ 3, 4, 6, 7 ],
       "balls": 1,
       "choiceVariants": [
-        "style",
-        "href",
-        "onclick",
-        "innerHTML",
-        "target",
-        "typeof",
-        "var",
-        "title"
+        "push()",
+        "isNaN()",
+        "shift()",
+        "trim()",
+        "charCodeAt()",
+        "splice()",
+        "indexOf()",
+        "slice()"
       ],
       "choicePicture": {
         "url": "images/goalkeeper-2.gif",
@@ -147,7 +141,7 @@
     {
       "type": "findError",
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
-      "question": "Найти и исправить ошибки в коде",
+      "question": "Найти и исправить ошибки в литерале объекта",
       "wrongContent": [
           "var figure = {",
           "    this.id = 'circle'",
@@ -158,15 +152,13 @@
       ],
       "rightContent": [
           "var figure = {",
-          "    id: 'circle'",
+          "    id: 'circle',",
           "    changeId: function ( newId ) {",
           "         this.id = newId",
           "    }",
           "}"
       ],
-      "contentCols": 50,
-      "contentRows": 4,
-      "balls": 3,
+      "balls": 5,
       "rightInputPicture": {
         "url": "images/victory_transparent.gif",
         "width": "300px"
@@ -179,20 +171,18 @@
     {
       "type": "choice",
       "centralPicture": "images/player.gif",
-      "question": "С помощью какого метода можно<br/>создать новый элемент DOM",
-      "rightChoicesNums": [
-        2
-      ],
+      "question": "var x = 0; <br>var y = 0;<br> var z = x > y ? '***' : ( x === y ? [ 1, 2 ] : x / y )<br>Какой тип данных будет у переменной z ?",
+      "rightChoicesNums": [ 5 ],
       "balls": 1,
       "choiceVariants": [
-        "getElementById",
-        "appendChild",
-        "createElement",
-        "removeChild",
-        "addEventListener",
-        "open",
-        "focus",
-        "blur"
+        "boolean",
+        "string",
+        "number",
+        "undefined",
+        "function",
+        "object",
+        "NaN",
+        "Infinity"
       ],
       "choicePicture": {
         "url": "images/goalkeeper-2.gif",
@@ -210,12 +200,12 @@
     {
       "type": "input",
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
-      "question": "Назначить обработчика события click для кнопки btn",
+      "question": "Найти в строке nature подстроку bio, и поместить индекс вхождения подстроки bio в переменную ind",
       "inputLegend": {
-        "before": "btn.",
-        "after": "= 'clickHandler ( event )';"
+        "before": "var ind = nature.",
+        "after": "= '( bio )';"
       },
-      "rightInput": "onclick",
+      "rightInput": "indexOf",
       "balls": 3,
       "rightInputPicture": {
         "url": "images/victory_transparent.gif",
@@ -229,10 +219,10 @@
     {
       "type": "input",
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
-      "question": "Дополнить контент html-элемента main тегом &lt;p>Это я добавил&lt;/p>",
+      "question": "Дополнить контент html-элемента main текстом 'Это я добавил'",
       "inputLegend": {
-        "before": "document.getElementsByTagName('main')[0].",
-        "after": " += '&lt;p>Это я добавил&lt;/p>';"
+        "before": "var elem = document.createElement ( 'p' )<br>document.body.appendChild ( elem )<br>elem.",
+        "after": " += 'Это я добавил';"
       },
       "rightInput": "innerHTML",
       "balls": 3,
@@ -248,23 +238,18 @@
     {
       "type": "choice",
       "centralPicture": "images/player.gif",
-      "question": "Укажите свойства объекта<br/>Event",
-      "rightChoicesNums": [
-        5,
-        7,
-        "",
-        ""
-      ],
+      "question": "Что из перечисленного является методами объекта Array",
+      "rightChoicesNums": [ 4, 5, 7 ],
       "balls": 1,
       "choiceVariants": [
-        "innerHTML",
-        "width",
-        "style",
-        "color",
-        "parentNode",
-        "target",
-        "title",
-        "type"
+        "substr()",
+        "getTime()",
+        "split()",
+        "trim()",
+        "unshift()",
+        "slice()",
+        "indexOf()",
+        "join()"
       ],
       "choicePicture": {
         "url": "images/goalkeeper-2.gif",
@@ -283,14 +268,7 @@
       "type": "choice",
       "centralPicture": "images/player.gif",
       "question": "Какое выражение вернет NaN",
-      "rightChoicesNums": [
-        0,
-        1,
-        4,
-        5,
-        6,
-        7
-      ],
+      "rightChoicesNums": [ 0, 1, 4, 5, 6, 7 ],
       "balls": 1,
       "choiceVariants": [
         "0/0",
@@ -316,24 +294,48 @@
       }
     },
     {
+      "type": "findError",
+      "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
+      "question": "Замените ??? так, чтобы в результате выполнения кода у Маши появилась новая подруга",
+      "wrongContent": [
+          "var girl = {",
+          "    name: 'Маша',",
+          "    friends: [ 'Лена', 'Света', 'Оля' ]",
+          "}",
+          "girl.friends.??? ( ?, ?, 'Марина' )"
+      ],
+      "rightContent": [
+          "var girl = {",
+          "    name: 'Маша',",
+          "    friends: [ 'Лена', 'Света', 'Оля' ]",
+          "}",
+          "girl.friends.splice ( 1, 1, 'Марина' )"
+      ],
+      "balls": 8,
+      "rightInputPicture": {
+        "url": "images/emotion-12.png",
+        "width": "300px"
+      },
+      "wrongInputPicture": {
+        "url": "images/simpson-and-ball.gif",
+        "width": "150px"
+      }
+    },
+    {
       "type": "choice",
       "centralPicture": "images/player.gif",
-      "question": "Укажите условные операторы",
-      "rightChoicesNums": [
-        0,
-        3,
-        5
-      ],
+      "question": "В каком случае результат будет иметь тип 'number'",
+      "rightChoicesNums": [ 0, 1, 2, 3, 4, 6 ],
       "balls": 1,
       "choiceVariants": [
-        "switch",
-        "for",
-        "while",
-        "if",
-        "typeof",
-        "x?y:z",
-        "+=",
-        "%"
+        "false + 5",
+        "4 + NaN",
+        "9 + ( 7 > 5 )",
+        "Infinity + undefined",
+        "Infinity + null",
+        "null + '5'",
+        "4 + isNaN ( 5 )",
+        "null"
       ],
       "choicePicture": {
         "url": "images/goalkeeper.gif",
@@ -351,11 +353,9 @@
     {
       "type": "findError",
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
-      "question": "Дополнить код, подставив вместо ??? правильные выражения. Код должен добавить на страницу новый элемент с заданным текстом",
-      "wrongContent": "var div = ???('div'); \rdiv.??? = 'Это новый элемент';\r\tdocument.???(div);\r",
-      "rightContent": "var div = document.createElement('div'); \rdiv.innerHTML = 'Это новый элемент';\r\tdocument.body.appendChild(div);\r",
-      "contentCols": 100,
-      "contentRows": 7,
+      "question": "Дополнить код, подставив вместо ??? правильные выражения. Результатом должна быть строка a*b*c*d*e*f",
+      "wrongContent": "var x = 'abcdef'.??? ('').??? ( '*' )",
+      "rightContent": "var x = 'abcdef'.split ('').join ( '*' )",
       "balls": 8,
       "rightInputPicture": {
         "url": "images/emotion-12.png",
