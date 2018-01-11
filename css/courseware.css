@@ -146,25 +146,28 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 	   animation: text_rotation 1s infinite;
 	   cursor:pointer;
    }
-   .livesPanel, .scorePanel {
+.livesPanel, .scorePanel {
 	   position:fixed;
 	   z-index:2000;
 	   border: dotted 1px gray;
 	   border-radius:4px;
 	   padding:5px;
 	   font-size:10px;
-   }
-   .livesPanel {
+}
+.livesPanel {
 	   left:0;
 	   bottom:30px;
 	   width:40px;
 	   height:auto;
-   }
-   .scorePanel {
-	   left:0;
-	   bottom:0;
-	   width:100%;
-   }
+}
+.scorePanel {
+	left:0;
+	bottom:0;
+	width:100%;
+	background-image: url(https://www.contactology.com/hs-fs/hub/384191/file-1089530430-png/images/email-features-10.png?t=1457720903189&width=300&name=email-features-10.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
    .scorePanel > progress { width:200px; height:10px; }
    .scorePanel:before { content: 'Score: '; }
    .livesPanel > div { 
