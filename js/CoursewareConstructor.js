@@ -327,46 +327,42 @@ function CoursewareConstructor () {
 		this.livesPanel.removeChild ( this.livesPanel.children [0] )
 		this.lives--
 		if ( this.lives === 0 ) {
-			
 			this.mainScene.style.backgroundImage = 'url(' + this.failurePictureURL + ')'
 			this.mainScene.style.backgroundSize = 'cover'
 			this.mainScene.style.backgroundPosition = 'top center'
 			this.buttonToNextLevel.innerHTML = "FAILURE"
 			this.buttonToNextLevel.className += " garevna_gameFinishText"
-			formatExit ( "red" )
-			this.buttonToNextLevel.style.color = "red"
-			this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
-			this.buttonToNextLevel.style.border = 'none';
-			this.buttonToNextLevel.onclick = function (event) { location = '/' }
-			this.mainScene.appendChild ( this.buttonToNextLevel )
+			this.formatExit ( "red" )
+			//this.buttonToNextLevel.style.color = "red"
+			//this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
+			//this.buttonToNextLevel.style.border = 'none';
+			//this.buttonToNextLevel.onclick = function (event) { location = '/' }
+			//this.mainScene.appendChild ( this.buttonToNextLevel )
 		}
 		else this.finish ()
 	}
 	// =========================================================================================== gameOver
 	function gameOver () {
-		if ( this.levelNum == this.levels.length -1 ) {
-			this.mainScene.innerHTML = ''
+		if ( this.levelNum === this.levels.length -1 ) {
 			if ( this.scorePanel.progressBar.value == this.maxScore ) {
 				this.mainScene.style.backgroundImage = 'url(' + this.successPictureURL + ')'
 				this.mainScene.style.backgroundPosition = 'top center'
 				this.buttonToNextLevel.innerHTML = "YOU WIN!"
 				// this.buttonToNextLevel.style.color = "white"
-				formatExit ( "white" )
+				this.formatExit ( "white" )
 			}
 			else {
 				this.mainScene.style.backgroundImage = 'url(' + this.gameOverPictureURL + ')'
 				this.mainScene.style.backgroundPosition = 'center center'
 				this.buttonToNextLevel.innerHTML = "GAME OVER"
 				// this.buttonToNextLevel.style.color = "#2BF513"
-				formatExit ( "#2BF513" )
+				this.formatExit ( "#2BF513" )
 			}
 			this.mainScene.style.backgroundSize = 'cover'
 			this.mainScene.innerHTML += '<h1>Набрано очков: ' + this.scorePanel.progressBar.value
 			this.mainScene.innerHTML += ' из ' + this.maxScore + ' возможных</h1>'
 			this.mainScene.innerHTML += '<h1>Осталось жизней: ' + this.lives
 			this.mainScene.innerHTML += ' из ' + this.maxLives + '</h1>'
-			// this.mainScene.appendChild ( this.buttonToNextLevel )
-			// this.buttonToNextLevel.onclick = function (event) { window.close(); }
 		}
 		else this.nextLevelAvailiable = true
 	}
