@@ -2,210 +2,210 @@
 
 function CoursewareConstructor () {
 	
-	this.init = function (coursewareSourceURL) {
-		this.ready = false;
-		this.levels = [];
-		this.levelNum = -1;
-		this.lives = 0;
-		this.maxLives = 0;
-		this.choiceLevelElements = [];
-		this.score = 0;
-		this.maxScore = 0;
-		this.nextLevelAvailiable = true;
+	this.init = function ( coursewareSourceURL ) {
+		this.ready = false
+		this.levels = []
+		this.levelNum = -1
+		this.lives = 0
+		this.maxLives = 0
+		this.choiceLevelElements = []
+		this.score = 0
+		this.maxScore = 0
+		this.nextLevelAvailiable = true
 		
-		this.livesPictureURL = undefined;
-		this.gameOverPictureURL = undefined;
-		this.successPictureURL = undefined;
-		this.failurePictureURL = undefined;
+		this.livesPictureURL = undefined
+		this.gameOverPictureURL = undefined
+		this.successPictureURL = undefined
+		this.failurePictureURL = undefined
 		
-		this.livesPanel = document.createElement('aside');
-		this.livesPanel.className = "livesPanel";
-		document.body.appendChild(this.livesPanel);
+		this.livesPanel = document.createElement('aside')
+		this.livesPanel.className = "livesPanel"
+		document.body.appendChild(this.livesPanel)
 		
-		this.scorePanel = document.createElement('aside');
-		this.scorePanel.className = "scorePanel";
-		document.body.appendChild(this.scorePanel);
-		this.scorePanel.progressBar = document.createElement('progress');
-		this.scorePanel.appendChild(this.scorePanel.progressBar);
+		this.scorePanel = document.createElement('aside')
+		this.scorePanel.className = "scorePanel"
+		document.body.appendChild(this.scorePanel)
+		this.scorePanel.progressBar = document.createElement('progress')
+		this.scorePanel.appendChild(this.scorePanel.progressBar)
 		
-		this.mainScene = document.createElement('figure');
-		this.mainScene.className = "mainScene";
-		document.body.appendChild(this.mainScene);
-		this.mainScene.style.display = 'none';
-		this.mainScene.parentObject = this;
-		this.centralPicture = document.createElement('div');
-		this.centralPicture.className = "centralImage";
-		this.question = document.createElement('p');
+		this.mainScene = document.createElement('figure')
+		this.mainScene.className = "mainScene"
+		document.body.appendChild(this.mainScene)
+		this.mainScene.style.display = 'none'
+		this.mainScene.parentObject = this
+		this.centralPicture = document.createElement('div')
+		this.centralPicture.className = "centralImage"
+		this.question = document.createElement('p')
 		
-		this.resizeMainScene = resizeMainScene.bind(this);
-		this.callback = coursewareCallback.bind(this);
-		this.createPanels = initPanels.bind(this);
-		this.createMainScene = createMainScene.bind(this);
-		this.constructChoiceLevel = constructChoiceLevel.bind(this);
-		this.resizeChoiceLevel = resizeChoiceLevel.bind(this);
-		this.constructInputLevel = constructInputLevel.bind(this);
-		this.constructFindErrorLevel = constructFindErrorLevel.bind(this);
-		this.finish = gameOver.bind(this);
-		this.looser = die.bind(this);
-		this.nextLevel = coursewareNextLevel.bind(this);
-		this.success = coursewareSuccess.bind(this);
-		this.getLevelType = corsewareLevelType.bind(this);
+		this.resizeMainScene = resizeMainScene.bind(this)
+		this.callback = coursewareCallback.bind(this)
+		this.createPanels = initPanels.bind(this)
+		this.createMainScene = createMainScene.bind(this)
+		this.constructChoiceLevel = constructChoiceLevel.bind(this)
+		this.resizeChoiceLevel = resizeChoiceLevel.bind(this)
+		this.constructInputLevel = constructInputLevel.bind(this)
+		this.constructFindErrorLevel = constructFindErrorLevel.bind(this)
+		this.finish = gameOver.bind(this)
+		this.looser = die.bind(this)
+		this.nextLevel = coursewareNextLevel.bind(this)
+		this.success = coursewareSuccess.bind(this)
+		this.getLevelType = corsewareLevelType.bind(this)
 		
-		loadData ( coursewareSourceURL, this.callback );
-	};
+		loadData ( coursewareSourceURL, this.callback )
+	}
 	// ======================================================================================== loadData
-    function loadData ( sourceURL, callback ) {
+	function loadData ( sourceURL, callback ) {
 		try {
-			var coursewareWorker = new Worker( 'js/json_loader.js' );
-			coursewareWorker.postMessage ( sourceURL );
+			var coursewareWorker = new Worker( 'js/json_loader.js' )
+			coursewareWorker.postMessage ( sourceURL )
 			coursewareWorker.addEventListener('message', function(e) {
-				var $data = e.data;
-				coursewareWorker.terminate();
-				coursewareWorker = undefined;
-				if (e.data) { callback ( $data ); }
-				else { alert("Ограниченная функциональность. Отсутствуют библиотеки: " + sourceURL); }
-			}, false);
+				var $data = e.data
+				coursewareWorker.terminate()
+				coursewareWorker = undefined
+				if (e.data) callback ( $data )
+				else alert ( "Ограниченная функциональность. Отсутствуют библиотеки: " + sourceURL )
+			}, false)
 		}
-		catch (err) { alert("К сожалению, в Вашем браузере полная функциональность невозможна"); }
-	};
+		catch (err) { alert("К сожалению, в Вашем браузере полная функциональность невозможна") }
+	}
 	// ======================================================================================== createPanels
-    function initPanels () {
-		for (var j = 0; j < this.lives; j++) {
-			var life = document.createElement('div');
-			life.backgroundImage = 'url(' + this.livesPictureURL + ')';
-			this.livesPanel.appendChild(life);
+	function initPanels () {
+		for ( var j = 0; j < this.lives; j++ ) {
+			var life = document.createElement ( 'div' )
+			life.backgroundImage = 'url(' + this.livesPictureURL + ')'
+			this.livesPanel.appendChild(life)
 		}
-		this.scorePanel.progressBar.max = this.maxScore;
-		this.scorePanel.progressBar.value = 0;
-	};
+		this.scorePanel.progressBar.max = this.maxScore
+		this.scorePanel.progressBar.value = 0
+	}
 	// =========================================================================================== createMainScene
 	function createMainScene () {
-		this.mainScene.style.display = 'block';
-		this.mainScene.innerHTML = '';
-		this.mainScene.style.backgroundSize = "20%";
-		this.resizeMainScene();
-	};
+		this.mainScene.style.display = 'block'
+		this.mainScene.innerHTML = ''
+		this.mainScene.style.backgroundSize = "20%"
+		this.resizeMainScene ()
+	}
 	// =========================================================================================== resizeMainScene
 	function resizeMainScene () {
 		//this.mainScene.style.width = Math.round(window.innerWidth*0.7) + 'px';
 		//this.mainScene.style.height = Math.round(window.innerHeight*0.8) + 'px';
 		//this.mainScene.style.marginLeft = Math.round(window.innerWidth*0.2) + 'px';
 		//this.mainScene.style.marginTop = Math.round(window.innerHeight*0.1) + 'px';
-	};
+	}
 	// =========================================================================================== coursewareCallback
 	function coursewareCallback ( $data ) {
 		// this  ===== CoursewareConstructor
 		// self  ===== window
-		// this.maxScore = $data.maxScore;
-		this.lives = $data.lives;
-		this.maxLives = $data.lives;
-		//this.livesPictureURL = $data.livesPictureURL;
-		var sheet = document.createElement('style');
-		sheet.innerHTML = '.livesPanel > div { background-image: url(' +$data.livesPictureURL  + '); }';
-		document.head.appendChild(sheet);
-		this.gameOverPictureURL = $data.gameOverPictureURL;
-		this.successPictureURL = $data.successPictureURL;
-		this.failurePictureURL = $data.failurePictureURL;
-		this.levels = $data.levels;
-		this.maxScore = 0;
+		// this.maxScore = $data.maxScore
+		this.lives = $data.lives
+		this.maxLives = $data.lives
+		//this.livesPictureURL = $data.livesPictureURL
+		var sheet = document.createElement('style')
+		sheet.innerHTML = '.livesPanel > div { background-image: url(' +$data.livesPictureURL  + ') }'
+		document.head.appendChild(sheet)
+		this.gameOverPictureURL = $data.gameOverPictureURL
+		this.successPictureURL = $data.successPictureURL
+		this.failurePictureURL = $data.failurePictureURL
+		this.levels = $data.levels
+		this.maxScore = 0
 		for ( var j = 0; j < this.levels.length; j++) {
-			var q =  ( this.levels[j].type == 'choice' ) ? this.levels[j].rightChoicesNums.length : 1;
-			this.maxScore += this.levels[j].balls * q;
+			var q =  ( this.levels[j].type == 'choice' ) ? this.levels[j].rightChoicesNums.length : 1
+			this.maxScore += this.levels[j].balls * q
 		}
-		this.ready = true;
-		$data = null;
-		this.createPanels();
-		this.levelNum = -1;
-		//this.nextLevel( 0 );
-	};
+		this.ready = true
+		$data = null
+		this.createPanels ()
+		this.levelNum = -1
+		//this.nextLevel( 0 )
+	}
 	function corsewareLevelType () {
-		return (this.levelNum < 0) ? undefined : this.levels[this.levelNum].type;
-	};
+		return (this.levelNum < 0) ? undefined : this.levels [ this.levelNum ].type
+	}
 	// ========================================================================================== nextLevel
 	function coursewareNextLevel () {
 		if (!this.ready) { console.error('Not ready: data is not loaded yet'); return; }
-		this.levelNum++;
-		if ( this.levelNum == this.levels.length ) { this.finish(); }
-		var levelData = this.levels[this.levelNum];
+		this.levelNum++
+		if ( this.levelNum == this.levels.length ) this.finish()
+		var levelData = this.levels [ this.levelNum ]
 		
-		this.createMainScene();
+		this.createMainScene()
 		
-		this.mainScene.style.backgroundImage = 'url(' + levelData.centralPicture + ')';
-		this.question = document.createElement('p');
-		this.question.className = 'coursewareQuest';
-		this.question.innerHTML = levelData.question;
-		this.mainScene.appendChild(this.question);
-		this.buttonToNextLevel = document.createElement('button');
-		this.buttonToNextLevel.innerHTML = "ДАЛЬШЕ >";
-		this.buttonToNextLevel.className = "buttonToNextLevel";
-		this.mainScene.appendChild(this.buttonToNextLevel);
+		this.mainScene.style.backgroundImage = 'url(' + levelData.centralPicture + ')'
+		this.question = document.createElement('p')
+		this.question.className = 'coursewareQuest'
+		this.question.innerHTML = levelData.question
+		this.mainScene.appendChild(this.question)
+		this.buttonToNextLevel = document.createElement('button')
+		this.buttonToNextLevel.innerHTML = "ДАЛЬШЕ >"
+		this.buttonToNextLevel.className = "buttonToNextLevel"
+		this.mainScene.appendChild(this.buttonToNextLevel)
 		this.buttonToNextLevel.onclick = function ( event ) {
-			var parentObject = event.target.parentNode.parentObject;
-			if ( parentObject.levelNum == parentObject.levels.length-1 ) { parentObject.finish(); }
+			var parentObject = event.target.parentNode.parentObject
+			if ( parentObject.levelNum == parentObject.levels.length-1 ) parentObject.finish()
 			else {
-				event.target.parentNode.style.display = 'none';
-				parentObject.gotoNextLevel = true;
+				event.target.parentNode.style.display = 'none'
+				parentObject.gotoNextLevel = true
 			}
 		}
 		
-		if ( this.levelNum == this.levels.length ) { this.success(); this.nextLevelAvailiable = false; }
+		if ( this.levelNum == this.levels.length ) { this.success(); this.nextLevelAvailiable = false }
 		else {
-			this.nextLevelAvailiable = true;
+			this.nextLevelAvailiable = true
 			switch ( levelData.type ) {
 				case 'choice':
-				    this.constructChoiceLevel( levelData );
-					break;
+				    this.constructChoiceLevel( levelData )
+					break
 				case 'input':
-				    this.constructInputLevel( levelData );
-					break;
+				    this.constructInputLevel( levelData )
+					break
 				case 'findError':
-				    this.constructFindErrorLevel ( levelData );
-					break;
+				    this.constructFindErrorLevel ( levelData )
+					break
 				default:
-				    break;
+				    break
 			}
 		}
-		return this.nextLevelAvailiable;
-	};
+		return this.nextLevelAvailiable
+	}
 	function coursewareSuccess() {
-		this.mainScene.backgroundImage = 'url(' + this.successPictureURL + ')';
+		this.mainScene.backgroundImage = 'url(' + this.successPictureURL + ')'
 	}
 	// ========================================================================================== constructChoiceLevel
 	function constructInputLevel ( levelData ) {
-		var inputContainer = document.createElement('div');
-		inputContainer.className = "inputContainer";
-		var label = document.createElement('span');
-		label.innerHTML = levelData.inputLegend.before;
-		inputContainer.appendChild(label);
-		var inputElement = document.createElement('input');
-		inputElement.className = "coursewareInputElement";
-		inputElement.type = 'text';
-		inputElement.size = "1";
-		inputElement.placeholder = "?";
-		inputElement.title = "Не забудьте нажать Enter";
-		inputElement.oninput = function ( event ) { event.target.size = Math.max(event.target.value.length-1, 1); }
-		inputContainer.appendChild(inputElement);
-		var label = document.createElement('span');
-		label.innerHTML = levelData.inputLegend.after;
-		inputContainer.appendChild(label);
-		this.mainScene.appendChild(inputContainer);
+		var inputContainer = document.createElement('div')
+		inputContainer.className = "inputContainer"
+		var label = document.createElement('span')
+		label.innerHTML = levelData.inputLegend.before
+		inputContainer.appendChild(label)
+		var inputElement = document.createElement('input')
+		inputElement.className = "coursewareInputElement"
+		inputElement.type = 'text'
+		inputElement.size = "1"
+		inputElement.placeholder = "?"
+		inputElement.title = "Не забудьте нажать Enter"
+		inputElement.oninput = function ( event ) { event.target.size = Math.max(event.target.value.length-1, 1) }
+		inputContainer.appendChild(inputElement)
+		var label = document.createElement('span')
+		label.innerHTML = levelData.inputLegend.after
+		inputContainer.appendChild(label)
+		this.mainScene.appendChild(inputContainer)
 		inputElement.addEventListener ('change', function ( event ) {
-			var scene = event.target.parentNode.parentNode;
-			var parentObject = scene.parentObject;
-			var levelData = parentObject.levels[parentObject.levelNum];
+			var scene = event.target.parentNode.parentNode
+			var parentObject = scene.parentObject
+			var levelData = parentObject.levels[parentObject.levelNum]
 			if ( this.value != levelData.rightInput ) {
-					scene.style.backgroundImage = 'url(' + levelData.wrongInputPicture.url + ')';
-					scene.style.backgroundSize = levelData.wrongInputPicture.width;
-					parentObject.looser();
+					scene.style.backgroundImage = 'url(' + levelData.wrongInputPicture.url + ')'
+					scene.style.backgroundSize = levelData.wrongInputPicture.width
+					parentObject.looser()
 				}
 				else {
-					scene.style.backgroundImage = 'url(' + levelData.rightInputPicture.url + ')';
-					scene.style.backgroundSize = levelData.rightInputPicture.width;
-					parentObject.scorePanel.progressBar.value += levelData.balls;
-					parentObject.finish();
+					scene.style.backgroundImage = 'url(' + levelData.rightInputPicture.url + ')'
+					scene.style.backgroundSize = levelData.rightInputPicture.width
+					parentObject.scorePanel.progressBar.value += levelData.balls
+					parentObject.finish()
 				}
-		});
-	};
+		})
+	}
 	// ======================================================================================= constructFindErrorLevel
 	function constructFindErrorLevel ( levelData ) {
 		var inputContainer = document.createElement ( 'div' )
@@ -215,7 +215,7 @@ function CoursewareConstructor () {
 		var editCodePlace = document.createElement ( 'pre' )
 		inputContainer.appendChild ( editCodePlace )
 		editCodePlace.className = "coursewareTextAreaElement"
-		for ( var i = 0; i < wrongContent.length; i++ ) {
+		for ( var i = 0; i < levelData.wrongContent.length; i++ ) {
 			elems [i] = document.createElement ( 'p' )
 			editCodePlace.appendChild ( elems [i] )
 			elems [i].innerHTML = levelData.wrongContent [i]
