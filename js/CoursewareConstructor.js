@@ -50,6 +50,7 @@ function CoursewareConstructor () {
 		this.nextLevel = coursewareNextLevel.bind(this)
 		this.success = coursewareSuccess.bind(this)
 		this.getLevelType = corsewareLevelType.bind(this)
+		this.formatExit = formatExit.bind(this)
 		
 		loadData ( coursewareSourceURL, this.callback )
 	}
@@ -118,6 +119,7 @@ function CoursewareConstructor () {
 		this.levelNum = -1
 		//this.nextLevel( 0 )
 	}
+	// ================================================================================= corsewareLevelType
 	function corsewareLevelType () {
 		return (this.levelNum < 0) ? undefined : this.levels [ this.levelNum ].type
 	}
@@ -167,10 +169,11 @@ function CoursewareConstructor () {
 		}
 		return this.nextLevelAvailiable
 	}
+	// ========================================================================================== coursewareSuccess
 	function coursewareSuccess() {
 		this.mainScene.backgroundImage = 'url(' + this.successPictureURL + ')'
 	}
-	// ========================================================================================== constructChoiceLevel
+	// ======================================================================================= constructChoiceLevel
 	function constructInputLevel ( levelData ) {
 		var inputContainer = document.createElement('div')
 		inputContainer.className = "inputContainer"
@@ -287,9 +290,9 @@ function CoursewareConstructor () {
 	}
 	// ====================================================================================== resizeChoiceLevel
 	function resizeChoiceLevel () {
-		var center = { top: Math.round(window.innerHeight/2), left: Math.round(window.innerWidth/2) }
-		var radius = Math.round(Math.min(window.innerHeight, window.innerWidth) * 0.3)
-		var delta = Math.round(radius/Math.sqrt(2))
+		var center = { top: Math.round( ( window.innerHeight -50 )/2), left: Math.round(window.innerWidth/2) }
+		var radius = Math.round(Math.min(window.innerHeight-50, window.innerWidth) * 0.3)
+		var delta = Math.round ( radius/Math.sqrt(2) )
 		var points = [
 		    { top: center.top - radius, left: center.left },
 			{ top: center.top - delta, left: center.left + delta },
@@ -309,6 +312,7 @@ function CoursewareConstructor () {
 	}
 	// ======================================================================================= formatExit
 	function formatExit ( color ) {
+		this.mainScene.innerHTML = ''
 		this.buttonToNextLevel.style.fontSize = "80px"
 		this.buttonToNextLevel.style.width = "100%"
 		this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
@@ -323,18 +327,18 @@ function CoursewareConstructor () {
 		this.livesPanel.removeChild ( this.livesPanel.children [0] )
 		this.lives--
 		if ( this.lives === 0 ) {
-			this.mainScene.innerHTML = ''
+			
 			this.mainScene.style.backgroundImage = 'url(' + this.failurePictureURL + ')'
 			this.mainScene.style.backgroundSize = 'cover'
 			this.mainScene.style.backgroundPosition = 'top center'
 			this.buttonToNextLevel.innerHTML = "FAILURE"
 			this.buttonToNextLevel.className += " garevna_gameFinishText"
 			formatExit ( "red" )
-			// this.buttonToNextLevel.style.color = "red"
-			// this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
-			// this.buttonToNextLevel.style.border = 'none';
-			//this.buttonToNextLevel.onclick = function (event) { location = '/' }
-			// this.mainScene.appendChild ( this.buttonToNextLevel )
+			this.buttonToNextLevel.style.color = "red"
+			this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
+			this.buttonToNextLevel.style.border = 'none';
+			this.buttonToNextLevel.onclick = function (event) { location = '/' }
+			this.mainScene.appendChild ( this.buttonToNextLevel )
 		}
 		else this.finish ()
 	}
@@ -344,14 +348,14 @@ function CoursewareConstructor () {
 			this.mainScene.innerHTML = ''
 			if ( this.scorePanel.progressBar.value == this.maxScore ) {
 				this.mainScene.style.backgroundImage = 'url(' + this.successPictureURL + ')'
-				// this.mainScene.style.backgroundPosition = 'top center'
+				this.mainScene.style.backgroundPosition = 'top center'
 				this.buttonToNextLevel.innerHTML = "YOU WIN!"
 				// this.buttonToNextLevel.style.color = "white"
 				formatExit ( "white" )
 			}
 			else {
 				this.mainScene.style.backgroundImage = 'url(' + this.gameOverPictureURL + ')'
-				// this.mainScene.style.backgroundPosition = 'center center'
+				this.mainScene.style.backgroundPosition = 'center center'
 				this.buttonToNextLevel.innerHTML = "GAME OVER"
 				// this.buttonToNextLevel.style.color = "#2BF513"
 				formatExit ( "#2BF513" )
