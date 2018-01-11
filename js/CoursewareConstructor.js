@@ -346,9 +346,10 @@ function CoursewareConstructor () {
 			this.mainScene.innerHTML += ' из ' + this.maxLives + '</h1>';
 			
 			this.buttonToNextLevel.style.width = "100%";
-			this.buttonToNextLevel.style.fontSize = "100px";
-			this.buttonToNextLevel.style.border = 'none';
-			this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)";
+			this.buttonToNextLevel.style.fontSize = "80px";
+			this.buttonToNextLevel.style.bottom = '10%';
+			this.buttonToNextLevel.style.textAlign = 'center';
+			this.buttonToNextLevel.style.textShadow = "5px 5px 5px #00000080";
 			
 			this.mainScene.appendChild(this.buttonToNextLevel);
 			this.buttonToNextLevel.onclick = function (event) { window.close(); }
