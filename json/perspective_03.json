@@ -68,6 +68,16 @@
          "xBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSYlNGSjdyNS1KWUk",
          "yBackground":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZGpqb1hCdHlOcTg",
          "centralBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSQmJOTU52QWhHZXM"
+       },
+       {
+         "xBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSckttV191bFp1MkE",
+         "yBackground":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSckttV191bFp1MkE",
+         "centralBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSZVk0RWpoMmRNUGM"
+       },
+       {
+         "xBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSdmdBTklEeHRrWGM",
+         "yBackground":"https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSYlNGSjdyNS1KWUk",
+         "centralBackground": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSX1dHb2NxN0h1a2s"
        }
     ]
 }
