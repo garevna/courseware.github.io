@@ -283,10 +283,9 @@ function CoursewareConstructor () {
 	};
 	// ====================================================================================== resizeChoiceLevel
 	function resizeChoiceLevel () {
-		var center = { top: Math.round( ( window.innerHeight - 80 )/2), left: Math.round(window.innerWidth/2) }
-		console.info ( 'center: ' + center )
+		var center = { top: Math.round( ( window.innerHeight - 80 )/2), 
+			      left: Math.round( window.innerWidth * 0.8 /2) }
 		var radius = Math.round(Math.min ( window.innerHeight - 80, window.innerWidth ) * 0.3)
-		console.info ( 'radius: ' + radius )
 		var delta = Math.round(radius/Math.sqrt(2))
 		var points = [
 			{ top: center.top - radius, left: center.left },
@@ -298,7 +297,6 @@ function CoursewareConstructor () {
 			{ top: center.top, left: center.left - radius },
 			{ top: center.top - delta, left: center.left - delta }
 		]
-		console.info ( 'points: ' + points )
 		var targets = document.getElementsByClassName("targetElement");
 		for ( var j = 0; j < targets.length; j++ ) {
 			targets[j].style.top = points[j].top + 'px';
