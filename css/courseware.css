@@ -1,6 +1,6 @@
 @charset "utf-8";
     
-	@font-face {
+@font-face {
         font-family: 'Comic Sans MS';
         src: url("../fonts/Comic Sans MS.ttf");
         src: local('Comic Sans MS'), local('Comic Sans MS'),
@@ -8,9 +8,12 @@
         url("../fonts/Comic Sans MS.otf") format("opentype"),
         url("../fonts/Comic Sans MS.woff") format("woff"),
         url("../fonts/Comic Sans MS.svg");
-	}
-	body { background-color:black; color:white; font-family:'Comic Sans MS'; }
-	.mainScene {
+}
+* { box-sizing: border-box; }
+
+body { background-color:black; color:white; font-family:'Comic Sans MS'; }
+
+.mainScene {
 		position:fixed;
 		z-index:1100;
 		width:80%;
@@ -25,8 +28,8 @@
 		background-repeat:no-repeat;
 		background-size:40%;
 		background-position:bottom right;
-	}
-	.loadinProcess {
+}
+.loadinProcess {
 		position:fixed;
 		left:48%;
 		top:48%;
@@ -36,7 +39,7 @@
 		background-repeat:no-repeat;
 		background-size:contain;
 		background-position:center center;
-	}
+}
 	.personage {
 		position: absolute;
 		z-index: 1200;
@@ -146,7 +149,7 @@
    .livesPanel, .scorePanel {
 	   position:fixed;
 	   z-index:2000;
-	   border: groove 2px white;
+	   border: dotted 1px gray;
 	   border-radius:4px;
 	   padding:5px;
 	   font-size:10px;
@@ -154,14 +157,13 @@
    .livesPanel {
 	   left:0;
 	   bottom:30px;
-	   min-width:30px;
-	   max-width:90px;
+	   width:40px;
 	   height:auto;
    }
    .scorePanel {
 	   left:0;
 	   bottom:0;
-	   width:300px;
+	   width:100%;
    }
    .scorePanel > progress { width:200px; height:10px; }
    .scorePanel:before { content: 'Score: '; }
@@ -195,15 +197,17 @@
    }
    @media screen and (max-width: 480px) {
 	   .livesPanel { width:48px; padding:2px; }
+	   .targetElement { width:35px; height:35px; }
    }
    @media screen and (max-height: 480px) {
 	   .mainScene { top:5%; left:5%; width:83%; font-size:12px; }
+	   .targetElement { width:30px; height:30px; }
 	   .livesPanel { width:36px; padding:2px; }
 	   .livesPanel div { width:30px; height:30px; }
    }
    @media screen and (max-width: 420px)  {
 	   body { font-size:10px; }
-	   .targetElement { width:50px; height:50px; }
+	   .targetElement { width:30px; height:30px; }
 	   .buttonToNextLevel { font-size:14px; }
 	   .livesPanel { width:36px; padding:2px; }
 	   .livesPanel div { width:30px; height:30px; }
