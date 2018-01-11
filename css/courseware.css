@@ -62,9 +62,9 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 		max-width:95%;
 	}
 	.coursewareQuest {
-		position:absolute;
-		top:5%;
-		left:5%;
+		position:fixed;
+		top:0;
+		left:10%;
 	}
 	.coursewareInputElement {
 		background-color:transparent;
