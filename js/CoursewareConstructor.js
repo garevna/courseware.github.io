@@ -283,7 +283,7 @@ function CoursewareConstructor () {
 	};
 	// ====================================================================================== resizeChoiceLevel
 	function resizeChoiceLevel () {
-		var center = { top: Math.round( ( window.innerHeight - 80 )/2), 
+		var center = { top: Math.round( ( window.innerHeight - 50 )/2), 
 			      left: Math.round( window.innerWidth * 0.9 /2) }
 		var radius = Math.round(Math.min ( window.innerHeight, window.innerWidth * 0.9 ) * 0.3)
 		var delta = Math.round(radius/Math.sqrt(2))
