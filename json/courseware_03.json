@@ -53,7 +53,7 @@
       "balls": 3,
       "rightInputPicture": {
         "url": "images/smile-01.gif",
-        "width": "100px"
+        "width": "50px"
       },
       "wrongInputPicture": {
         "url": "images/explosion.gif",
@@ -93,7 +93,7 @@
     {
       "type": "choice",
       "centralPicture": "images/player.gif",
-      "question": "Методы работы со строками",
+      "question": "Методы объекта String",
       "rightChoicesNums": [ 3, 4, 6, 7 ],
       "balls": 1,
       "choiceVariants": [
@@ -112,11 +112,11 @@
       },
       "rightChoicePicture": {
         "url": "images/smile-01.gif",
-        "width": "80px"
+        "width": "50px"
       },
       "wrongChoicePicture": {
         "url": "images/emotion-06.png",
-        "width": "80px"
+        "width": "50px"
       }
     },
     {
@@ -125,13 +125,13 @@
       "question": "Создайте пустой массив",
       "inputLegend": {
         "before": "var arr = ",
-        "after": ";"
+        "after": ""
       },
       "rightInput": "[]",
       "balls": 1,
       "rightInputPicture": {
         "url": "images/emotion-12.png",
-        "width": "300px"
+        "width": "50px"
       },
       "wrongInputPicture": {
         "url": "images/explosion.gif",
@@ -190,11 +190,11 @@
       },
       "rightChoicePicture": {
         "url": "images/smile-07.png",
-        "width": "80px"
+        "width": "50px"
       },
       "wrongChoicePicture": {
         "url": "images/smile-06.png",
-        "width": "80px"
+        "width": "50px"
       }
     },
     {
@@ -228,11 +228,11 @@
       "balls": 3,
       "rightInputPicture": {
         "url": "images/smile-07.png",
-        "width": "300px"
+        "width": "50px"
       },
       "wrongInputPicture": {
         "url": "images/smile-06.png",
-        "width": "100px"
+        "width": "50px"
       }
     },
     {
@@ -257,11 +257,11 @@
       },
       "rightChoicePicture": {
         "url": "images/emotion-12.png",
-        "width": "80px"
+        "width": "50px"
       },
       "wrongChoicePicture": {
         "url": "images/emotion-06.png",
-        "width": "80px"
+        "width": "50px"
       }
     },
     {
@@ -286,11 +286,11 @@
       },
       "rightChoicePicture": {
         "url": "images/emotion-12.png",
-        "width": "80px"
+        "width": "50px"
       },
       "wrongChoicePicture": {
         "url": "images/emotion-06.png",
-        "width": "80px"
+        "width": "50px"
       }
     },
     {
@@ -314,7 +314,7 @@
       "balls": 8,
       "rightInputPicture": {
         "url": "images/emotion-12.png",
-        "width": "300px"
+        "width": "50px"
       },
       "wrongInputPicture": {
         "url": "images/simpson-and-ball.gif",
@@ -343,23 +343,23 @@
       },
       "rightChoicePicture": {
         "url": "images/smile-07.png",
-        "width": "80px"
+        "width": "50px"
       },
       "wrongChoicePicture": {
         "url": "images/smile-06.png",
-        "width": "80px"
+        "width": "50px"
       }
     },
     {
       "type": "findError",
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
       "question": "Дополнить код, подставив вместо ??? правильные выражения. Результатом должна быть строка a*b*c*d*e*f",
-      "wrongContent": "var x = 'abcdef'.??? ('').??? ( '*' )",
-      "rightContent": "var x = 'abcdef'.split ('').join ( '*' )",
+      "wrongContent": [ "var x = 'abcdef'.??? ('').??? ( '*' )" ],
+      "rightContent": [ "var x = 'abcdef'.split ('').join ( '*' )" ],
       "balls": 8,
       "rightInputPicture": {
         "url": "images/emotion-12.png",
-        "width": "300px"
+        "width": "50px"
       },
       "wrongInputPicture": {
         "url": "images/simpson-and-ball.gif",
