@@ -228,17 +228,6 @@ function CoursewareConstructor () {
 			var etalon = rightAnswer.split('').map ( x => x.trim () ).join ( "" )
 			return testus === etalon
 		}
-		//inputElement.cols = levelData.contentCols
-		//inputElement.rows = levelData.contentRows
-		//inputElement.value = levelData.wrongContent
-		
-		//var cloneInputElement = document.createElement('textarea')
-		//cloneInputElement.className = "coursewareTextAreaElement"
-		//cloneInputElement.style.display = 'none'
-		//cloneInputElement.value = levelData.rightContent
-		//cloneInputElement.cols = levelData.contentCols
-		//cloneInputElement.rows = levelData.contentRows
-		//inputContainer.appendChild(cloneInputElement)
 		var btn = document.createElement('button')
 		btn.innerHTML = 'Готово'
 		btn.style.fontSize = "20px"
@@ -340,7 +329,7 @@ function CoursewareConstructor () {
 			this.mainScene.style.backgroundPosition = 'top center'
 			this.buttonToNextLevel.innerHTML = "FAILURE"
 			this.buttonToNextLevel.className += " garevna_gameFinishText"
-			this.formatExit ( "red" )
+			formatExit ( "red" )
 			// this.buttonToNextLevel.style.color = "red"
 			// this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
 			// this.buttonToNextLevel.style.border = 'none';
@@ -358,14 +347,14 @@ function CoursewareConstructor () {
 				// this.mainScene.style.backgroundPosition = 'top center'
 				this.buttonToNextLevel.innerHTML = "YOU WIN!"
 				// this.buttonToNextLevel.style.color = "white"
-				this.formatExit ( "white" )
+				formatExit ( "white" )
 			}
 			else {
 				this.mainScene.style.backgroundImage = 'url(' + this.gameOverPictureURL + ')'
 				// this.mainScene.style.backgroundPosition = 'center center'
 				this.buttonToNextLevel.innerHTML = "GAME OVER"
 				// this.buttonToNextLevel.style.color = "#2BF513"
-				this.formatExit ( "#2BF513" )
+				formatExit ( "#2BF513" )
 			}
 			this.mainScene.style.backgroundSize = 'cover'
 			this.mainScene.innerHTML += '<h1>Набрано очков: ' + this.scorePanel.progressBar.value
