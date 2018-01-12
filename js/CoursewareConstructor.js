@@ -125,12 +125,12 @@ function CoursewareConstructor () {
 	}
 	// ========================================================================================== nextLevel
 	function coursewareNextLevel () {
-		if (!this.ready) { console.error('Not ready: data is not loaded yet'); return; }
+		if ( !this.ready ) { console.error( 'Not ready: data is not loaded yet' ); return }
 		this.levelNum++
 		if ( this.levelNum == this.levels.length ) this.finish()
 		var levelData = this.levels [ this.levelNum ]
 		
-		this.createMainScene()
+		this.createMainScene ()
 		
 		this.mainScene.style.backgroundImage = 'url(' + levelData.centralPicture + ')'
 		this.question = document.createElement('p')
@@ -155,16 +155,16 @@ function CoursewareConstructor () {
 			this.nextLevelAvailiable = true
 			switch ( levelData.type ) {
 				case 'choice':
-				    this.constructChoiceLevel( levelData )
+					this.constructChoiceLevel( levelData )
 					break
 				case 'input':
-				    this.constructInputLevel( levelData )
+					this.constructInputLevel( levelData )
 					break
 				case 'findError':
-				    this.constructFindErrorLevel ( levelData )
+					this.constructFindErrorLevel ( levelData )
 					break
 				default:
-				    break
+					break
 			}
 		}
 		return this.nextLevelAvailiable
@@ -258,27 +258,29 @@ function CoursewareConstructor () {
 	// ========================================================================================== constructInputLevel
 	function constructChoiceLevel ( levelData ) {
 		for ( var j = 0; j < levelData.choiceVariants.length; j++ ) {
-			var elem = document.createElement('div');
-			elem.className =  'targetElement';
-			elem.style.backgroundImage = 'url(' + levelData.choicePicture.url + ')';
-			elem.innerHTML = '<p>' + levelData.choiceVariants[j] + '</p>';
-			elem.looser = this.looser;
+			var elem = document.createElement('div')
+			elem.className =  'targetElement'
+			elem.style.backgroundImage = 'url(' + levelData.choicePicture.url + ')'
+			elem.innerHTML = '<p>' + levelData.choiceVariants[j] + '</p>'
+			elem.looser = this.looser
 			elem.addEventListener ('click', function ( event ) {
-				var targetElem = event.target;
-				if ( targetElem.disabled ) { return; }
-				targetElem.disabled = true;
-				targetElem = (targetElem.tagName == "P") ? targetElem.parentNode : targetElem;
-				var num = levelData.choiceVariants.indexOf(targetElem.children[0].innerHTML);
-				if ( levelData.rightChoicesNums.indexOf(num) < 0 ) {
-					targetElem.style.backgroundImage = 'url(' + levelData.wrongChoicePicture.url + ')';
-					targetElem.style.width = levelData.wrongChoicePicture.width + 'px';
-					targetElem.style.height = levelData.wrongChoicePicture.height + 'px';
-					this.looser();
+				var targetElem = event.target
+				if ( targetElem.disabled ) return
+				targetElem.disabled = true
+				targetElem = ( targetElem.tagName == "P" ) ? targetElem.parentNode : targetElem
+				var num = levelData.choiceVariants.indexOf ( targetElem.children[0].innerHTML )
+				alert ( num )
+				alert ( levelData.rightChoicesNums.indexOf ( num ) )
+				if ( levelData.rightChoicesNums.indexOf ( num ) < 0 ) {
+					targetElem.style.backgroundImage = 'url(' + levelData.wrongChoicePicture.url + ')'
+					targetElem.style.width = levelData.wrongChoicePicture.width + 'px'
+					targetElem.style.height = levelData.wrongChoicePicture.height + 'px'
+					this.looser()
 				}
 				else {
-					targetElem.style.backgroundImage = 'url(' + levelData.rightChoicePicture.url + ')';
-					targetElem.style.width = levelData.rightChoicePicture.width + 'px';
-					targetElem.style.height = levelData.rightChoicePicture.height + 'px';
+					targetElem.style.backgroundImage = 'url(' + levelData.rightChoicePicture.url + ')'
+					targetElem.style.width = levelData.rightChoicePicture.width + 'px'
+					targetElem.style.height = levelData.rightChoicePicture.height + 'px'
 					targetElem.parentNode.parentObject.scorePanel.progressBar.value += levelData.balls
 					targetElem.parentNode.parentObject.finish()
 				}
