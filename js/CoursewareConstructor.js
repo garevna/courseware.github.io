@@ -321,6 +321,8 @@ function CoursewareConstructor () {
 		this.buttonToNextLevel.style.border = 'none'
 		this.buttonToNextLevel.style.color = color
 		this.buttonToNextLevel.style.textAlign = "center"
+		this.buttonToNextLevel.style.position = "absolute"
+		this.buttonToNextLevel.style.bottom = "20px"
 		
 		this.buttonToNextLevel.onclick = function (event) { location.reload() }
 	}
