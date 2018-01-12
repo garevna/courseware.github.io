@@ -55,16 +55,19 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 		text-align:left;
 	}
 	.coursewareTextAreaElement {
-		background-color:black;
+		background-color:#00000090;
 		color:#2BF513;
 		padding:5px 10px;
 		display:block;
 		max-width:95%;
+		margin-top: -20px;
+		line-height: 5px;
 	}
 	.coursewareQuest {
-		position:fixed;
+		position:absolute;
 		top:0;
-		left:10%;
+		width:100%;
+		padding: 0 20px;
 	}
 	.coursewareInputElement {
 		background-color:transparent;
@@ -75,7 +78,7 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 		animation:input_mc 0.5s infinite;
 	}
 	.buttonToNextLevel {
-		position:absolute;
+		position:fixed;
 		bottom:0;
 		right:0;
 		font-family:'Comic Sans MS';
