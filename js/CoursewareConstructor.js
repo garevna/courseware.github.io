@@ -268,6 +268,7 @@ function CoursewareConstructor () {
 				if ( targetElem.disabled ) return
 				targetElem.disabled = true
 				targetElem = ( targetElem.tagName == "P" ) ? targetElem.parentNode : targetElem
+				alert ( targetElem.children[0].innerHTML )
 				var num = levelData.choiceVariants.indexOf ( targetElem.children[0].innerHTML )
 				alert ( num )
 				alert ( levelData.rightChoicesNums.indexOf ( num ) )
