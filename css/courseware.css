@@ -171,7 +171,7 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-   .scorePanel > progress { width:200px; height:10px; }
+   .scorePanel > progress { width:200px; height:10px; margin-left: 35px; }
    /*.scorePanel:before { content: 'Score: '; }*/
    .livesPanel > div { 
 	   width:40px; 
