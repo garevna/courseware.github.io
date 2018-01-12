@@ -325,7 +325,7 @@
       "choiceVariants": [
         "false + 5",
         "4 + NaN",
-        "9 + ( 7 > 5 )",
+        "9 + ( '' == false )",
         "Infinity + undefined",
         "Infinity + null",
         "null + '5'",
