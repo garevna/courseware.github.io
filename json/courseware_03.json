@@ -18,7 +18,7 @@
         "if (!x) return",
         "var z = x ? 0 : 1",
         "x == 1",
-        "z \&\& t",
+        "z &amp;&amp; t",
         "Math.min (x, y)",
         "x.length != 0"
       ],
