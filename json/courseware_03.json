@@ -385,13 +385,13 @@
           "var idiot = new Hero ( { name: 'Идиот' } )",
           "idiot.startMission ( 'Спасение пингвинов' )"
       ],
-      "balls": 8,
+      "balls": 10,
       "rightInputPicture": {
-        "url": "images/emotion-12.png",
+        "url": "images/alien-2.gif",
         "width": "50px"
       },
       "wrongInputPicture": {
-        "url": "images/simpson-and-ball.gif",
+        "url": "images/punish.gif",
         "width": "150px"
       }
     }
