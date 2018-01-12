@@ -192,7 +192,7 @@ function CoursewareConstructor () {
 		label.innerHTML = levelData.inputLegend.after
 		inputContainer.appendChild(label)
 		this.mainScene.appendChild(inputContainer)
-		inputElement.addEventListener ('change', function ( event ) {
+		inputElement.onchange = function ( event ) {
 			var scene = event.target.parentNode.parentNode
 			var parentObject = scene.parentObject
 			var levelData = parentObject.levels[parentObject.levelNum]
@@ -200,14 +200,13 @@ function CoursewareConstructor () {
 					scene.style.backgroundImage = 'url(' + levelData.wrongInputPicture.url + ')'
 					scene.style.backgroundSize = levelData.wrongInputPicture.width
 					parentObject.looser()
-				}
-				else {
+			} else {
 					scene.style.backgroundImage = 'url(' + levelData.rightInputPicture.url + ')'
 					scene.style.backgroundSize = levelData.rightInputPicture.width
 					parentObject.scorePanel.progressBar.value += levelData.balls
 					parentObject.finish()
-				}
-		})
+			}
+		}
 	}
 	// ======================================================================================= constructFindErrorLevel
 	function constructFindErrorLevel ( levelData ) {
@@ -313,13 +312,16 @@ function CoursewareConstructor () {
 	// ======================================================================================= formatExit
 	function formatExit ( color ) {
 		this.mainScene.innerHTML = ''
+		this.mainScene.appendChild ( this.buttonToNextLevel )
+		
+		this.mainScene.style.backgroundSize = 'cover'
 		this.buttonToNextLevel.style.fontSize = "80px"
 		this.buttonToNextLevel.style.width = "100%"
 		this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
 		this.buttonToNextLevel.style.border = 'none'
 		this.buttonToNextLevel.style.color = color
 		this.buttonToNextLevel.style.textAlign = "center"
-		this.mainScene.appendChild ( this.buttonToNextLevel )
+		
 		this.buttonToNextLevel.onclick = function (event) { location.reload() }
 	}
 	// =============================================================================================== die
@@ -328,18 +330,11 @@ function CoursewareConstructor () {
 		this.lives--
 		if ( this.lives === 0 ) {
 			this.mainScene.style.backgroundImage = 'url(' + this.failurePictureURL + ')'
-			this.mainScene.style.backgroundSize = 'cover'
 			this.mainScene.style.backgroundPosition = 'top center'
 			this.buttonToNextLevel.innerHTML = "FAILURE"
 			this.buttonToNextLevel.className += " garevna_gameFinishText"
 			this.formatExit ( "red" )
-			//this.buttonToNextLevel.style.color = "red"
-			//this.buttonToNextLevel.style.textShadow = "5px 5px 5px rgba(0,0,0,0.7)"
-			//this.buttonToNextLevel.style.border = 'none';
-			//this.buttonToNextLevel.onclick = function (event) { location = '/' }
-			//this.mainScene.appendChild ( this.buttonToNextLevel )
-		}
-		else this.finish ()
+		} else this.finish ()
 	}
 	// =========================================================================================== gameOver
 	function gameOver () {
@@ -348,17 +343,14 @@ function CoursewareConstructor () {
 				this.mainScene.style.backgroundImage = 'url(' + this.successPictureURL + ')'
 				this.mainScene.style.backgroundPosition = 'top center'
 				this.buttonToNextLevel.innerHTML = "YOU WIN!"
-				// this.buttonToNextLevel.style.color = "white"
 				this.formatExit ( "white" )
 			}
 			else {
 				this.mainScene.style.backgroundImage = 'url(' + this.gameOverPictureURL + ')'
 				this.mainScene.style.backgroundPosition = 'center center'
 				this.buttonToNextLevel.innerHTML = "GAME OVER"
-				// this.buttonToNextLevel.style.color = "#2BF513"
 				this.formatExit ( "#2BF513" )
 			}
-			this.mainScene.style.backgroundSize = 'cover'
 			this.mainScene.innerHTML += '<h1>Набрано очков: ' + this.scorePanel.progressBar.value
 			this.mainScene.innerHTML += ' из ' + this.maxScore + ' возможных</h1>'
 			this.mainScene.innerHTML += '<h1>Осталось жизней: ' + this.lives
