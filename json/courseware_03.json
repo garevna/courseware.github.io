@@ -10,7 +10,7 @@
       "type": "choice",
       "centralPicture": "./images/astronaut.gif",
       "question": "Что из перечисленного является логическим выражением",
-      "rightChoicesNums": [ 1, 4, 6, 7 ],
+      "rightChoicesNums": [ 1, 4, 5, 7 ],
       "balls": 1,
       "choiceVariants": [
         "x = 0",
