@@ -48,7 +48,7 @@
       "balls": 3,
       "rightInputPicture": {
         "url": "images/smile-01.gif",
-        "width": "50px"
+        "width": "80px"
       },
       "wrongInputPicture": {
         "url": "images/explosion.gif",
@@ -125,8 +125,8 @@
       "rightInput": "[]",
       "balls": 1,
       "rightInputPicture": {
-        "url": "images/emotion-12.png",
-        "width": "50px"
+        "url": "images/smile-01.gif",
+        "width": "80px"
       },
       "wrongInputPicture": {
         "url": "images/explosion.gif",
@@ -291,7 +291,7 @@
     {
       "type": "findError",
       "centralPicture": "https://drive.google.com/uc?export=download&id=0BxaMB69y7fvSbGdmVWxJX3JOYlE",
-      "question": "Замените ??? так, чтобы в результате выполнения кода у Маши появилась новая подруга",
+      "question": "Замените '?' так, чтобы в результате выполнения кода у Маши появилась новая подруга вместо Светы",
       "wrongContent": [
           "var girl = {",
           "    name: 'Маша',",
@@ -351,6 +351,40 @@
       "question": "Дополнить код, подставив вместо ??? правильные выражения. Результатом должна быть строка a*b*c*d*e*f",
       "wrongContent": [ "var x = 'abcdef'.??? ('').??? ( '*' )" ],
       "rightContent": [ "var x = 'abcdef'.split ('').join ( '*' )" ],
+      "balls": 8,
+      "rightInputPicture": {
+        "url": "images/emotion-12.png",
+        "width": "50px"
+      },
+      "wrongInputPicture": {
+        "url": "images/simpson-and-ball.gif",
+        "width": "150px"
+      }
+    },
+    {
+      "type": "findError",
+      "centralPicture": "images/personage-01.gif",
+      "question": "Подправьте конструктор, подставив вместо ??? правильные выражения. Нужно создать прототипный метод startMission, затем создать экземпляр idiot и вызывать унаследованный им метод startMission",
+      "wrongContent": [
+          "var Hero = function ( params ) {",
+          "     this.name = ???.name || 'Hero'",
+          "}",
+          "Hero.???.startMission = function ( mission ) {",
+          "     alert ( 'Я - ' + ???.name + ', выполняю миссию: ' + mission )",
+          "}",
+          "var idiot = new ??? ( { name: 'Идиот' } )",
+          "idiot.startMission ( 'Спасение пингвинов' )"
+      ],
+      "rightContent": [
+          "var Hero = function ( params ) {",
+          "     this.name = params.name || 'Hero'",
+          "}",
+          "Hero.prototype.startMission = function ( mission ) {",
+          "     alert ( 'Я - ' + this.name + ', выполняю миссию: ' + mission )",
+          "}",
+          "var idiot = new Hero ( { name: 'Идиот' } )",
+          "idiot.startMission ( 'Спасение пингвинов' )"
+      ],
       "balls": 8,
       "rightInputPicture": {
         "url": "images/emotion-12.png",
