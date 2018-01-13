@@ -232,7 +232,7 @@ function CoursewareConstructor () {
 		}
 		var btn = document.createElement('button')
 		btn.innerHTML = 'Готово'
-		btn.style.fontSize = "20px"
+		btn.className = "buttonToNextLevel"
 		inputContainer.appendChild ( btn )
 		
 		btn.addEventListener ('click', function ( event ) {
