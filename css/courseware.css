@@ -77,25 +77,32 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 		font-weight: bold;
 		animation:input_mc 0.5s infinite;
 	}
-	.buttonToNextLevel {
+	.buttonToNextLevel, .buttonReadyText {
 		position:absolute;
 		bottom:0;
 		right:0;
 		font-family:'Comic Sans MS';
-		font-size:18px;
+		font-size:20px;
 		font-weight:bold;
-		color:yellow;
+		text-shadow:0px 0px 4px rgba(0,0,0,0.8);
 		border:none;
 		background:none;
-		text-shadow:0px 0px 4px rgba(0,0,0,0.8);
-		animation:button_mc 1s infinite;
 		outline:none;
+		cursor:pointer;
+	}
+	.buttonReadyText {
+		color:#00baff;
+		animation:button_mc reverse 1s infinite;
+	}
+	.buttonReadyText:hover {
+		color:#ffa300;
+	}
+	.buttonToNextLevel {
+		color:#cdfb0f;
+		animation:button_mc 1s infinite;
 	}
 	.buttonToNextLevel:hover {
-		color:#2EF31F;
-		border-color:yellow;
-		cursor:pointer;
-		outline:none;
+		color:#ff00e0;
 	}
     .centralImage {
 	   position:fixed;
