@@ -196,9 +196,9 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 	   /*0% { right: 0; }
 	   50% { right:20px; }
 	   100% { right: 0; }*/
-	   0% { font-size: 20px; rotate(0deg); }
-	   50% { font-size: 25px; rotate(20deg); }
-	   100% { font-size: 20px; rotate(0deg); }
+	   0% { font-size: 100%; }
+	   50% { font-size: 120%; }
+	   100% { font-size: 100%; }
    }
    @keyframes input_mc {
 	   0% { border: none; }
