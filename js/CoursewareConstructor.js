@@ -207,6 +207,10 @@ function CoursewareConstructor () {
 					parentObject.finish()
 			}
 		}
+		var btn = document.createElement('p')
+		btn.innerHTML = 'Не забудьте нажать Enter'
+		btn.className = "buttonReadyText"
+		inputContainer.appendChild ( btn )
 	}
 	// ======================================================================================= constructFindErrorLevel
 	function constructFindErrorLevel ( levelData ) {
@@ -232,7 +236,7 @@ function CoursewareConstructor () {
 		}
 		var btn = document.createElement('button')
 		btn.innerHTML = 'Готово'
-		btn.className = "buttonToNextLevel"
+		btn.className = "buttonReadyText"
 		inputContainer.appendChild ( btn )
 		
 		btn.addEventListener ('click', function ( event ) {
