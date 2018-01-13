@@ -317,7 +317,7 @@ function CoursewareConstructor () {
 	function formatExit ( color ) {
 		this.mainScene.innerHTML = ''
 		this.mainScene.appendChild ( this.buttonToNextLevel )
-		this.buttonToNextLevel.style.animation = ""
+		this.buttonToNextLevel.style.animation = "mc_finish"
 		
 		this.mainScene.style.backgroundSize = 'cover'
 		this.buttonToNextLevel.style.fontSize = "80px"
