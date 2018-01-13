@@ -78,7 +78,7 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 		animation:input_mc 0.5s infinite;
 	}
 	.buttonToNextLevel {
-		position:fixed;
+		position:absolute;
 		bottom:0;
 		right:0;
 		font-family:'Comic Sans MS';
@@ -182,9 +182,12 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 	   display:inline-block; 
    }
    @keyframes button_mc {
-	   0% { right: 0; }
+	   /*0% { right: 0; }
 	   50% { right:20px; }
-	   100% { right: 0; }
+	   100% { right: 0; }*/
+	   0% { font-size: 20px; rotate(0deg); }
+	   50% { font-size: 30px; rotate(10deg); }
+	   100% { font-size: 20px; rotate(0deg); }
    }
    @keyframes input_mc {
 	   0% { border: none; }
