@@ -200,6 +200,11 @@ body { background-color:black; color:white; font-family:'Comic Sans MS'; }
 	   50% { font-size: 120%; }
 	   100% { font-size: 100%; }
    }
+	@keyframes mc_finish {
+	   0% { font-size: 80px; }
+	   50% { font-size: 50px; }
+	   100% { font-size: 80px; }
+   }
    @keyframes input_mc {
 	   0% { border: none; }
 	   50% { border:solid 1px red; }
