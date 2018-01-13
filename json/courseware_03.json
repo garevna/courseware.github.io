@@ -166,7 +166,7 @@
     {
       "type": "choice",
       "centralPicture": "images/player.gif",
-      "question": "var x = 0, y = 0<br> var z = x > y ? '***' : ( x === y ? [ 1, 2 ] : x / y )<br>Какой тип данных будет у переменной z ?",
+      "question": "var x = 0, y = 0;   var z = x > y ? '***' : ( x === y ? [ 1, 2 ] : x / y )<br>Какой тип данных будет у переменной z ?",
       "rightChoicesNums": [ 5 ],
       "balls": 1,
       "choiceVariants": [
