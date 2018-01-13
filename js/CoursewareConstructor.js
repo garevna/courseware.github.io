@@ -327,6 +327,7 @@ function CoursewareConstructor () {
 		this.buttonToNextLevel.style.textAlign = "center"
 		this.buttonToNextLevel.style.position = "absolute"
 		this.buttonToNextLevel.style.bottom = "20px"
+		this.buttonToNextLevel.style.animation = "none"
 		
 		this.buttonToNextLevel.onclick = function (event) { location.reload() }
 	}
