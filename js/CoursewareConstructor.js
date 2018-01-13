@@ -317,6 +317,7 @@ function CoursewareConstructor () {
 	function formatExit ( color ) {
 		this.mainScene.innerHTML = ''
 		this.mainScene.appendChild ( this.buttonToNextLevel )
+		this.buttonToNextLevel.style.animation = ""
 		
 		this.mainScene.style.backgroundSize = 'cover'
 		this.buttonToNextLevel.style.fontSize = "80px"
@@ -327,7 +328,7 @@ function CoursewareConstructor () {
 		this.buttonToNextLevel.style.textAlign = "center"
 		this.buttonToNextLevel.style.position = "absolute"
 		this.buttonToNextLevel.style.bottom = "20px"
-		this.buttonToNextLevel.style.animation = "none"
+		
 		
 		this.buttonToNextLevel.onclick = function (event) { location.reload() }
 	}
